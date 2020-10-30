@@ -1,0 +1,194 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.myapplication"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.BLUETOOTH" />
+11-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:5:5-68
+11-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:5:22-65
+12    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+12-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:6:5-74
+12-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:6:22-71
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:7:5-79
+13-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:8:5-81
+14-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:8:22-78
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:9:5-80
+15-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:9:22-77
+16    <uses-permission android:name="android.permission.CAMERA" />
+16-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:10:5-65
+16-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:10:22-62
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:11:5-67
+17-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:11:22-64
+18    <uses-permission android:name="android.permission.BLUETOOTH" />
+18-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:5:5-68
+18-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:5:22-65
+19
+20    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+21    <uses-feature
+21-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:24:5-26:36
+22        android:name="android.hardware.camera"
+22-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:25:9-47
+23        android:required="false" />
+23-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:26:9-33
+24    <uses-feature
+24-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:27:5-29:36
+25        android:name="android.hardware.camera.front"
+25-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:28:9-53
+26        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+26-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:29:9-33
+27    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+28    <uses-feature
+28-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:32:5-34:36
+29        android:name="android.hardware.camera.autofocus"
+29-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:33:9-57
+30        android:required="false" />
+30-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:34:9-33
+31    <uses-feature
+31-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:35:5-37:36
+32        android:name="android.hardware.camera.flash"
+32-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:36:9-53
+33        android:required="false" />
+33-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:37:9-33
+34    <uses-feature
+34-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:38:5-40:36
+35        android:name="android.hardware.screen.landscape"
+35-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:39:9-57
+36        android:required="false" />
+36-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:40:9-33
+37    <uses-feature
+37-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:41:5-43:36
+38        android:name="android.hardware.wifi"
+38-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:42:9-45
+39        android:required="false" />
+39-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:43:9-33
+40
+41    <application
+41-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:14:5-57:19
+42        android:allowBackup="true"
+42-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:15:9-35
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e64e35c4aef087c1635e90b4bb3eba83/core-1.3.0/AndroidManifest.xml:24:18-86
+44        android:debuggable="true"
+45        android:icon="@drawable/logo_atah"
+45-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:16:9-43
+46        android:label="@string/app_name"
+46-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:17:9-41
+47        android:roundIcon="@drawable/logo_atah"
+47-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:18:9-48
+48        android:supportsRtl="true"
+48-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:19:9-35
+49        android:testOnly="true"
+50        android:theme="@style/AppTheme" >
+50-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:20:9-40
+51        <activity android:name="com.example.myapplication.Reimprimir" />
+51-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:21:9-57
+51-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:21:19-45
+52        <activity android:name="com.example.myapplication.Reimprimir_guia" />
+52-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:22:9-62
+52-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:22:19-50
+53        <activity
+53-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:23:9-26:15
+54            android:name="com.example.myapplication.GenerarGuia"
+54-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:23:19-46
+55            android:screenOrientation="portrait" />
+55-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:24:13-49
+56        <activity android:name="com.example.myapplication.Detalle" />
+56-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:27:9-45
+56-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:27:19-42
+57        <activity android:name="com.example.myapplication.Perfil" />
+57-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:28:9-44
+57-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:28:19-41
+58        <activity android:name="com.example.myapplication.Infracciones" />
+58-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:29:9-50
+58-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:29:19-47
+59        <activity
+59-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:30:9-33:15
+60            android:name="com.example.myapplication.MainActivity"
+60-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:30:19-47
+61            android:screenOrientation="portrait" />
+61-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:32:13-49
+62        <activity android:name="com.example.myapplication.ListaBluetoohtActivity" />
+62-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:34:9-60
+62-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:34:19-57
+63        <activity android:name="com.example.myapplication.Escanear" />
+63-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:35:9-46
+63-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:35:19-43
+64        <activity
+64-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:36:9-44:20
+65            android:name="com.example.myapplication.Login"
+65-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:36:19-40
+66            android:screenOrientation="portrait" >
+66-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:37:13-49
+67            <intent-filter>
+67-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:39:13-43:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:40:17-69
+68-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:40:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:42:17-77
+70-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:42:27-74
+71            </intent-filter>
+72        </activity>
+73        <activity
+73-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:45:9-47:54
+74            android:name="com.example.myapplication.permission.PermissionsActivity"
+74-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:46:13-59
+75            android:screenOrientation="fullSensor" /> <!-- File Provider -->
+75-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:47:13-51
+76        <provider
+76-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:48:9-56:20
+77            android:name="androidx.core.content.FileProvider"
+77-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:49:13-62
+78            android:authorities="com.example.myapplication.fileprovider"
+78-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:50:13-73
+79            android:exported="false"
+79-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:51:13-37
+80            android:grantUriPermissions="true" >
+80-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:52:13-47
+81            <meta-data
+81-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:53:13-55:58
+82                android:name="android.support.FILE_PROVIDER_PATHS"
+82-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:54:17-67
+83                android:resource="@xml/provider_paths" />
+83-->/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:55:17-55
+84        </provider>
+85
+86        <activity
+86-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:46:9-52:63
+87            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+87-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:47:13-74
+88            android:clearTaskOnLaunch="true"
+88-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:48:13-45
+89            android:screenOrientation="sensorLandscape"
+89-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:49:13-56
+90            android:stateNotNeeded="true"
+90-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:50:13-42
+91            android:theme="@style/zxing_CaptureTheme"
+91-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:51:13-54
+92            android:windowSoftInputMode="stateAlwaysHidden" />
+92-->[com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:52:13-60
+93
+94        <service
+94-->[androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+95            android:name="androidx.room.MultiInstanceInvalidationService"
+95-->[androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+96            android:directBootAware="true"
+96-->[androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+97            android:exported="false" />
+97-->[androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+98    </application>
+99
+100</manifest>

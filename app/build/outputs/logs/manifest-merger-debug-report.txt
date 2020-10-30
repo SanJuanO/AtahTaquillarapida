@@ -1,0 +1,380 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+MERGED from [com.google.android.material:material:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2365dbb9ff5c0e1f35e91cc6ba7713f4/material-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/a85c36796b93d2c1dbec61a982cb6251/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/443b9267cf473ffa75ab6aeb511db13e/jetified-core-ktx-1.3.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/786e4a9b49a6fa0d52b9b058b07c66fd/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [me.dm7.barcodescanner:zxing:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/da132dc23d56254640dc432b79620441/jetified-zxing-1.9/AndroidManifest.xml:2:1-13:12
+MERGED from [me.dm7.barcodescanner:core:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2cc833949bb665d33aa34a157218315e/jetified-core-1.9/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0ef5f4e99af89de709e459d9be5f5871/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7ae0178b2ecb3664f53db4f2fb7e6757/jetified-volley-1.1.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.kyanogen.signatureview:signature-view:1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7684fe7ff5de51e24f503ce924f5ec9b/jetified-signature-view-1.1/AndroidManifest.xml:2:1-16:12
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.room:room-ktx:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5cf3e29c96097a628c1d28cd4d4c4062/jetified-room-ktx-2.2.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5bc7f8789c43306b1481e38b34f1910c/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e5f556854ae6c41b1b67057e44821b25/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/6257c3cee8f979079fba74c557c0716e/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/cecbdf605be218333f1f966957e052f3/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/f4729c42a8d70ab95c67783995b986ee/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/4743d0033ed268e7ebff3c1878700f33/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/246d1b7cf18a540bc6d8e94b2eb569a2/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/9dce1c58e5b1297c797945cc0530b452/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e884c25c637a9735181fb28aea63cfa5/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/76bd72e3e02f387d861e41ccecbfebb0/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/85022cd6b367ddc76144955debe52367/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/d9a9a7df5eb882713e99daf965faa89e/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/82b807d23a28880d27c309f4970e25cb/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7253b5fef4d939c31d34fae7b4313c81/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/cdc6492c175daee97647664f4ecbc54d/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/fc544898bd45e3e0d783b5bf3b533749/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/b7c4fabb8578559942b84de8144b8922/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/fad43df01344bb5852cd8e2daaa9f5e6/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/9124342e7364969e9996435475ea7eee/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/d35b14f4d18b5493aabfd2ce4fad8c9d/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e64e35c4aef087c1635e90b4bb3eba83/core-1.3.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/bd2b234b71b480e481421bfc7598206f/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0857181fc66309b6dfd40dc7b1f5c07b/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/a5cd4e0456ef8415ce1e314f0d757291/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/633f027a488c0593f798952fa522c859/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/4359a3383df7153453095f5ca8c53e74/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/52e596a90373feae9f21f874772d9a49/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2b0869344f27afda65b4cd992267f319/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/6b1d168c223c3be2b88d04a2aaf4d614/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/635ed6f55e807601d10b60eeddec9f72/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7b9b85c5908bb0abcef82feb969556ce/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5b858b78bea73f6b01069680d04a07e2/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/3f9cfc3532215a328784bbb29a7814be/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/3f83b0b1103321d74b26554dfe48ce91/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/76f57f5a86cf3d94857b2180301577a2/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+	package
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:3:5-40
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:1-59:12
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:5:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:6:5-74
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:6:22-71
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:8:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:9:22-77
+uses-permission#android.permission.CAMERA
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:10:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:21:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:21:5-65
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:10:22-62
+uses-permission#android.permission.INTERNET
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:11:22-64
+application
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:14:5-57:19
+MERGED from [com.google.android.material:material:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2365dbb9ff5c0e1f35e91cc6ba7713f4/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2365dbb9ff5c0e1f35e91cc6ba7713f4/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/786e4a9b49a6fa0d52b9b058b07c66fd/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/786e4a9b49a6fa0d52b9b058b07c66fd/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [me.dm7.barcodescanner:zxing:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/da132dc23d56254640dc432b79620441/jetified-zxing-1.9/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:zxing:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/da132dc23d56254640dc432b79620441/jetified-zxing-1.9/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2cc833949bb665d33aa34a157218315e/jetified-core-1.9/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2cc833949bb665d33aa34a157218315e/jetified-core-1.9/AndroidManifest.xml:11:5-20
+MERGED from [com.android.volley:volley:1.1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7ae0178b2ecb3664f53db4f2fb7e6757/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7ae0178b2ecb3664f53db4f2fb7e6757/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.kyanogen.signatureview:signature-view:1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7684fe7ff5de51e24f503ce924f5ec9b/jetified-signature-view-1.1/AndroidManifest.xml:11:5-14:19
+MERGED from [com.kyanogen.signatureview:signature-view:1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7684fe7ff5de51e24f503ce924f5ec9b/jetified-signature-view-1.1/AndroidManifest.xml:11:5-14:19
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:45:5-53:19
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:45:5-53:19
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.core:core:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e64e35c4aef087c1635e90b4bb3eba83/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e64e35c4aef087c1635e90b4bb3eba83/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2b0869344f27afda65b4cd992267f319/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2b0869344f27afda65b4cd992267f319/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e64e35c4aef087c1635e90b4bb3eba83/core-1.3.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:19:9-35
+	android:label
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:17:9-41
+	android:roundIcon
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:18:9-48
+	android:icon
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:16:9-43
+	android:allowBackup
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:15:9-35
+	android:theme
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:20:9-40
+activity#com.example.myapplication.Reimprimir
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:21:9-57
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:21:19-45
+activity#com.example.myapplication.Reimprimir_guia
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:22:9-62
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:22:19-50
+activity#com.example.myapplication.GenerarGuia
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:23:9-26:15
+	android:screenOrientation
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:24:13-49
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:23:19-46
+activity#com.example.myapplication.Detalle
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:27:9-45
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:27:19-42
+activity#com.example.myapplication.Perfil
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:28:9-44
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:28:19-41
+activity#com.example.myapplication.Infracciones
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:29:9-50
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:29:19-47
+activity#com.example.myapplication.MainActivity
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:30:9-33:15
+	android:screenOrientation
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:32:13-49
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:30:19-47
+activity#com.example.myapplication.ListaBluetoohtActivity
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:34:9-60
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:34:19-57
+activity#com.example.myapplication.Escanear
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:35:9-46
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:35:19-43
+activity#com.example.myapplication.Login
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:36:9-44:20
+	android:screenOrientation
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:37:13-49
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:36:19-40
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:39:13-43:29
+action#android.intent.action.MAIN
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:40:17-69
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:40:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:42:17-77
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:42:27-74
+activity#com.example.myapplication.permission.PermissionsActivity
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:45:9-47:54
+	android:screenOrientation
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:47:13-51
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:46:13-59
+provider#androidx.core.content.FileProvider
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:48:9-56:20
+	android:grantUriPermissions
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:52:13-47
+	android:authorities
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:50:13-73
+	android:exported
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:51:13-37
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:49:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:53:13-55:58
+	android:resource
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:55:17-55
+	android:name
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml:54:17-67
+uses-sdk
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2365dbb9ff5c0e1f35e91cc6ba7713f4/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2365dbb9ff5c0e1f35e91cc6ba7713f4/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/a85c36796b93d2c1dbec61a982cb6251/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/a85c36796b93d2c1dbec61a982cb6251/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/443b9267cf473ffa75ab6aeb511db13e/jetified-core-ktx-1.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/443b9267cf473ffa75ab6aeb511db13e/jetified-core-ktx-1.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/786e4a9b49a6fa0d52b9b058b07c66fd/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/786e4a9b49a6fa0d52b9b058b07c66fd/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [me.dm7.barcodescanner:zxing:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/da132dc23d56254640dc432b79620441/jetified-zxing-1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:zxing:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/da132dc23d56254640dc432b79620441/jetified-zxing-1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2cc833949bb665d33aa34a157218315e/jetified-core-1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2cc833949bb665d33aa34a157218315e/jetified-core-1.9/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0ef5f4e99af89de709e459d9be5f5871/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0ef5f4e99af89de709e459d9be5f5871/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7ae0178b2ecb3664f53db4f2fb7e6757/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7ae0178b2ecb3664f53db4f2fb7e6757/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.kyanogen.signatureview:signature-view:1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7684fe7ff5de51e24f503ce924f5ec9b/jetified-signature-view-1.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.kyanogen.signatureview:signature-view:1.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7684fe7ff5de51e24f503ce924f5ec9b/jetified-signature-view-1.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:19:5-43
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:19:5-43
+MERGED from [androidx.room:room-ktx:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5cf3e29c96097a628c1d28cd4d4c4062/jetified-room-ktx-2.2.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-ktx:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5cf3e29c96097a628c1d28cd4d4c4062/jetified-room-ktx-2.2.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5bc7f8789c43306b1481e38b34f1910c/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5bc7f8789c43306b1481e38b34f1910c/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e5f556854ae6c41b1b67057e44821b25/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e5f556854ae6c41b1b67057e44821b25/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/6257c3cee8f979079fba74c557c0716e/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/6257c3cee8f979079fba74c557c0716e/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/cecbdf605be218333f1f966957e052f3/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/cecbdf605be218333f1f966957e052f3/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/f4729c42a8d70ab95c67783995b986ee/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/f4729c42a8d70ab95c67783995b986ee/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/4743d0033ed268e7ebff3c1878700f33/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/4743d0033ed268e7ebff3c1878700f33/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/246d1b7cf18a540bc6d8e94b2eb569a2/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/246d1b7cf18a540bc6d8e94b2eb569a2/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/9dce1c58e5b1297c797945cc0530b452/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/9dce1c58e5b1297c797945cc0530b452/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e884c25c637a9735181fb28aea63cfa5/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e884c25c637a9735181fb28aea63cfa5/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/76bd72e3e02f387d861e41ccecbfebb0/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/76bd72e3e02f387d861e41ccecbfebb0/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/85022cd6b367ddc76144955debe52367/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/85022cd6b367ddc76144955debe52367/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/d9a9a7df5eb882713e99daf965faa89e/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/d9a9a7df5eb882713e99daf965faa89e/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/82b807d23a28880d27c309f4970e25cb/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/82b807d23a28880d27c309f4970e25cb/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7253b5fef4d939c31d34fae7b4313c81/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7253b5fef4d939c31d34fae7b4313c81/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/cdc6492c175daee97647664f4ecbc54d/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/cdc6492c175daee97647664f4ecbc54d/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/fc544898bd45e3e0d783b5bf3b533749/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/fc544898bd45e3e0d783b5bf3b533749/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/b7c4fabb8578559942b84de8144b8922/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/b7c4fabb8578559942b84de8144b8922/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/fad43df01344bb5852cd8e2daaa9f5e6/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/fad43df01344bb5852cd8e2daaa9f5e6/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/9124342e7364969e9996435475ea7eee/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/9124342e7364969e9996435475ea7eee/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/d35b14f4d18b5493aabfd2ce4fad8c9d/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/d35b14f4d18b5493aabfd2ce4fad8c9d/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e64e35c4aef087c1635e90b4bb3eba83/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/e64e35c4aef087c1635e90b4bb3eba83/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/bd2b234b71b480e481421bfc7598206f/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/bd2b234b71b480e481421bfc7598206f/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0857181fc66309b6dfd40dc7b1f5c07b/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0857181fc66309b6dfd40dc7b1f5c07b/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/a5cd4e0456ef8415ce1e314f0d757291/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/a5cd4e0456ef8415ce1e314f0d757291/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/633f027a488c0593f798952fa522c859/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/633f027a488c0593f798952fa522c859/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/4359a3383df7153453095f5ca8c53e74/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/4359a3383df7153453095f5ca8c53e74/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/52e596a90373feae9f21f874772d9a49/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/52e596a90373feae9f21f874772d9a49/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2b0869344f27afda65b4cd992267f319/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/2b0869344f27afda65b4cd992267f319/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/6b1d168c223c3be2b88d04a2aaf4d614/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/6b1d168c223c3be2b88d04a2aaf4d614/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/635ed6f55e807601d10b60eeddec9f72/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/635ed6f55e807601d10b60eeddec9f72/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7b9b85c5908bb0abcef82feb969556ce/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/7b9b85c5908bb0abcef82feb969556ce/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5b858b78bea73f6b01069680d04a07e2/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/5b858b78bea73f6b01069680d04a07e2/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/3f9cfc3532215a328784bbb29a7814be/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/3f9cfc3532215a328784bbb29a7814be/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/3f83b0b1103321d74b26554dfe48ce91/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/3f83b0b1103321d74b26554dfe48ce91/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/76f57f5a86cf3d94857b2180301577a2/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/76f57f5a86cf3d94857b2180301577a2/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+		ADDED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/src/main/AndroidManifest.xml
+uses-feature#android.hardware.camera
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:24:5-26:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:26:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:25:9-47
+uses-feature#android.hardware.camera.front
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:27:5-29:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:29:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:28:9-53
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:32:5-34:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:34:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:33:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:35:5-37:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:37:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:36:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:38:5-40:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:40:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:39:9-57
+uses-feature#android.hardware.wifi
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:41:5-43:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:43:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:42:9-45
+activity#com.journeyapps.barcodescanner.CaptureActivity
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:46:9-52:63
+	android:screenOrientation
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:49:13-56
+	android:clearTaskOnLaunch
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:48:13-45
+	android:stateNotNeeded
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:50:13-42
+	android:windowSoftInputMode
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:52:13-60
+	android:theme
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:51:13-54
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/dd1f24e464542a281d751d286ddffd68/jetified-zxing-android-embedded-3.5.0/AndroidManifest.xml:47:13-74
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.5] /Users/oscarsanjuan/.gradle/caches/transforms-2/files-2.1/0c4549072b26f89bfc6023c9c9f4477c/room-runtime-2.2.5/AndroidManifest.xml:26:13-74

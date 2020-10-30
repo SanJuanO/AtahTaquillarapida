@@ -1,0 +1,3 @@
+/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/oscarsanjuan/Documents/atahrapida/AtahTaquillarapida/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/native-lib.dir
