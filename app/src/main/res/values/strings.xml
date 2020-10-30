@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Atah Venta</string>
+
+    <!-- strings for dialog -->
+    <string name="string_permission_help">Help</string>
+    <string name="string_permission_help_text">The permission is missing.\n\nTo grant this permission click on Settings, then Permissions and turn the permission on.\n\nThen click back twice to return to the app</string>
+    <string name="string_permission_quit">Exit App</string>
+    <string name="string_settings">Settings</string>
+    <string name="HOST">https://appis.atah.online/</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="tesItems">
+        <item>teszteljünk elkadsmfga sdmlkgads mglka mdslgk masdlgk msdlkg malskd gmlksd mglkadsmg akmg lakdsmg lksdm glk magyet</item>
+        <item>teszt két</item>
+        <item>teszt három</item>
+    </string-array>
+</resources>
