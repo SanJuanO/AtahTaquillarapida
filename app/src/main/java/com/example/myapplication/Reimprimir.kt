@@ -4,7 +4,9 @@ import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
@@ -18,6 +20,12 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.myapplication.utilidades.PrintBitmap
 import com.example.myapplication.utilidades.Utilidades
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.EncodeHintType
+import com.google.zxing.Writer
+import com.google.zxing.common.BitMatrix
+import com.google.zxing.oned.Code128Writer
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
 import kotlinx.android.synthetic.main.activity_generar_guia.view.*
 import kotlinx.android.synthetic.main.activity_infracciones.*
 import kotlinx.android.synthetic.main.activity_reimprimir.*
@@ -26,6 +34,7 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
 import java.io.UnsupportedEncodingException
+import java.util.*
 
 class Reimprimir : AppCompatActivity() {
     var pk = ""
@@ -134,52 +143,49 @@ class Reimprimir : AppCompatActivity() {
                             DESTINO=costos.getString("destinoboleto")
                             SALIDA=costos.getString("hora")
                             PRECIO=costos.getString("precio")
-                        if (FECHA.length < 25) {
-                            for (i in FECHA.length..25) {
-                                FECHA = FECHA + " "
-                            }
-                        }
-                        if (folio.length < 25) {
-                            for (i in folio.length..25) {
-                                folio = folio + " "
-                            }
-                        }
-                        if (ASIENTO.length < 20) {
-                            for (i in ASIENTO.length..20) {
-                                ASIENTO = ASIENTO + " "
+
+                        var org2 = ORIGEN
+                        if (org2.length < 15) {
+                            for (i in org2.length..15) {
+                                org2 = org2 + " "
                             }
                         }
 
-                        if (ORIGEN.length < 15) {
-                            for (i in ORIGEN.length..15) {
-                                ORIGEN = ORIGEN + " "
-                            }
+                        var DESTINO2 = DESTINO
+                        if (DESTINO.length > 18) {
+                            DESTINO2=DESTINO.substring( 0, 17)
+
+                            DESTINO2 = DESTINO2 + "..."
+
                         }
+
+
                         try {
+                            val texto1 = "FECHA:" + FECHA
+                            val tlinea  =  "  LINEA:" + LINEA + "\n"
+                            // val texto11 = FECHA+ "  "+LINEA+"\n"
+                            val texto2 = "            " + folio+"          "
+                            val tautobus= "     AUTOBUS:" + AUTOBUS + "\n"
+                            // val texto22 = folio+ "  "+AUTOBUS+"\n"
+                            val texto3 = "ASIENTO:" + ASIENTO
+                            val tsalida= " SALIDA:" + SALIDA + "\n"
 
-                            val text = "        REIMPRESIÓN" + "\n"
+                            //  val texto33 =  ASIENTO+ "  "+PASAJERO+"\n"
+                            val texto4 = "ORIGEN:"+org2
+                            val textodest="DESTINO:"+"\n"
+                            val tdestino= DESTINO2 + "\n"
 
-                            val texto1 = "FECHA:              LINEA:" + "\n"
-                            val texto11 = FECHA + "  " + LINEA + "\n"
-                            val texto2 = "FOLIO:              AUTOBUS:" + "\n"
-                            val texto22 = folio + "  " + AUTOBUS + "\n"
-                            val texto3 = "ASIENTO:            PASAJERO:" + "\n"
-                            val texto33 = ASIENTO + "  " + PASAJERO + "\n"
-                            val texto4 = "ORIGEN:" + "          DESTINO:" + "\n"
-                            val texto44 = ORIGEN + "  " + DESTINO + "\n"
+                            //     val texto5 = "          SALIDA:"+"\n"
+                            //   val texto55 = "       "+SALIDA+"\n"
 
 
-                            val texto5 = "          SALIDA:" + "\n"
-                            val texto55 = "       " + SALIDA + "\n"
-
-
-                            val texto6 = "FORMADEPAGO:         PRECIO:" + "\n"
-                            val texto66 =
-                                "EFECTIVO" + "                     " + "#" + PRECIO + ".00"
+                            val texto6 = "PAGO:EFECTIVO  PRECIO:$" + PRECIO + "\n"
+                            // val texto66 =
+                            //"EFECTIVO" + "                     " + "#" + PRECIO + ".00"
                             val texto666 =
-                                "PRESENTE IDENTIFICACIÓN ORIGINAL Y VIGENTE AL MOMENTO DE ABORDAR.\n"
+                                "Presente identificación original y vigenete al momento de abordar.\n"
                             val texto6666 =
-                                "La transportista no es responsable de este servicio.\nAtención a clientes: 01 800 836 0726,\n Consulta terminos y condiciónes en www.atah.online\n\n\n"
+                                "Atención a clientes: 01 800 836 0726 \nTterminos y condiciónes www.atah.online\n\n\n"
 
 
                             val fuente1 = 1
@@ -202,73 +208,30 @@ class Reimprimir : AppCompatActivity() {
                             Utilidades.outputStream!!.write(
                                 PrintBitmap.POS_PrintBMP(
                                     bitmap,
-                                    320,
+                                    100,
                                     MODE_PRINT_IMG
                                 )
                             )
 
 
                             // Para que acepte caracteres espciales
-                            Utilidades.outputStream!!.write(
-                                getByteString(
-                                    text,
-                                    negrita1,
-                                    fuente1,
-                                    1,
-                                    1
-                                )
-                            )
+
 
                             Utilidades.outputStream!!.write(
                                 getByteString(
                                     texto1,
                                     negrita,
-                                    fuente,
-                                    ancho,
-                                    alto
-                                )
-                            )
-                            Utilidades.outputStream!!.write(
-                                getByteString(
-                                    texto11,
-                                    negrita1,
                                     fuente1,
                                     ancho,
                                     alto
                                 )
                             )
+
                             Utilidades.outputStream!!.write(
                                 getByteString(
-                                    texto2,
+                                    tlinea,
                                     negrita,
                                     fuente,
-                                    ancho,
-                                    alto
-                                )
-                            )
-                            Utilidades.outputStream!!.write(
-                                getByteString(
-                                    texto22,
-                                    negrita1,
-                                    fuente1,
-                                    ancho,
-                                    alto
-                                )
-                            )
-                            Utilidades.outputStream!!.write(
-                                getByteString(
-                                    texto3,
-                                    negrita,
-                                    fuente,
-                                    ancho,
-                                    alto
-                                )
-                            )
-                            Utilidades.outputStream!!.write(
-                                getByteString(
-                                    texto33,
-                                    negrita1,
-                                    fuente1,
                                     ancho,
                                     alto
                                 )
@@ -282,19 +245,46 @@ class Reimprimir : AppCompatActivity() {
                                     alto
                                 )
                             )
-                            Utilidades.outputStream!!.write(
-                                getByteString(
-                                    texto44,
-                                    negrita1,
-                                    fuente1,
-                                    ancho,
-                                    alto
-                                )
-                            )
+
 
                             Utilidades.outputStream!!.write(
                                 getByteString(
-                                    texto5,
+                                    textodest,
+                                    0,
+                                    fuente1,
+                                    0,
+                                    0
+                                )
+                            )
+
+
+                            Utilidades.outputStream!!.write(
+                                getByteString(
+                                    tdestino,
+                                    1,
+                                    fuente1,
+                                    1,
+                                    1
+                                )
+                            )
+
+
+
+                            //    outputStream!!.write(getByteString(texto11, negrita1, fuente1, ancho, alto))
+
+                            Utilidades.outputStream!!.write(
+                                getByteString(
+                                    tautobus,
+                                    2,
+                                    fuente1,
+                                    1,
+                                    1
+                                )
+                            )
+                            //  outputStream!!.write(getByteString(texto22, negrita1, fuente1, ancho, alto))
+                            Utilidades.outputStream!!.write(
+                                getByteString(
+                                    texto3,
                                     negrita,
                                     fuente,
                                     ancho,
@@ -303,13 +293,18 @@ class Reimprimir : AppCompatActivity() {
                             )
                             Utilidades.outputStream!!.write(
                                 getByteString(
-                                    texto55,
-                                    negrita1,
+                                    tsalida,
+                                    2,
                                     fuente1,
-                                    ancho2,
-                                    alto
+                                    1,
+                                    1
                                 )
                             )
+                            // outputStream!!.write(getByteString(texto33, negrita1, fuente1, ancho, alto))
+
+
+                            //outputStream!!.write(getByteString(texto5, negrita, fuente, ancho, alto))
+                            //outputStream!!.write(getByteString(texto55, negrita1, fuente1, ancho2, alto))
                             Utilidades.outputStream!!.write(
                                 getByteString(
                                     texto6,
@@ -319,48 +314,96 @@ class Reimprimir : AppCompatActivity() {
                                     alto
                                 )
                             )
-                            Utilidades.outputStream!!.write(
-                                getByteString(
-                                    texto66,
-                                    negrita1,
-                                    fuente1,
-                                    ancho,
-                                    alto
-                                )
-                            )
+//                            outputStream!!.write(
+//                                getByteString(
+//                                    texto66,
+//                                    negrita1,
+//                                    fuente1,
+//                                    ancho,
+//                                    alto
+//                                )
+//                            )
 
                             Utilidades.outputStream.write("\n".toByteArray())
 
-                            val bitmapqr =
-                                QRCode.from(folio).withSize(ANCHO_IMG_58_MM, ANCHO_IMG_58_MM)
-                                    .bitmap()
+//                            val bitmapqr = QRCode.from(folio).withSize(ANCHO_IMG_58_MM ,ANCHO_IMG_58_MM) .bitmap()
+//                            outputStream!!.write(
+//                                PrintBitmap.POS_PrintBMP(
+//                                    bitmapqr,
+//                                    295,
+//                                    MODE_PRINT_IMG
+//                                )
+//                            )
+
+
+                            try {
+                                val productId: String = folio
+                                val hintMap: Hashtable<EncodeHintType, ErrorCorrectionLevel> =
+                                    Hashtable<EncodeHintType, ErrorCorrectionLevel>()
+                                hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
+                                val codeWriter: Writer
+                                codeWriter = Code128Writer()
+                                val byteMatrix: BitMatrix = codeWriter.encode(
+                                    productId,
+                                    BarcodeFormat.CODE_128,
+                                    400,
+                                    100,
+                                    hintMap
+                                )
+                                val width: Int = byteMatrix.getWidth()
+                                val height: Int = byteMatrix.getHeight()
+                                val bitmap =
+                                    Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+                                for (i in 0 until width) {
+                                    for (j in 0 until height) {
+                                        bitmap.setPixel(
+                                            i,
+                                            j,
+                                            if (byteMatrix.get(i, j)) Color.BLACK else Color.WHITE
+                                        )
+                                    }
+                                }
+                                val bitmapqr = bitmap
+
+                                Utilidades.outputStream!!.write(
+                                    PrintBitmap.POS_PrintBMP(
+                                        bitmapqr,
+                                        380,
+                                        MODE_PRINT_IMG
+                                    )
+                                )
+
+                            } catch (e: Exception) {
+                                val a = e
+                            }
                             Utilidades.outputStream!!.write(
-                                PrintBitmap.POS_PrintBMP(
-                                    bitmapqr,
-                                    295,
-                                    MODE_PRINT_IMG
+                                getByteString(
+                                    texto2,
+                                    negrita,
+                                    fuente,
+                                    ancho,
+                                    alto
                                 )
                             )
                             Utilidades.outputStream.write("\n".toByteArray())
                             Utilidades.outputStream!!.write(
                                 getByteString(
                                     texto666,
-                                    negrita1,
+                                    negrita,
                                     fuente1,
-                                    ancho,
-                                    alto
+                                    0,
+                                    0
                                 )
                             )
                             Utilidades.outputStream!!.write(
                                 getByteString(
                                     texto6666,
-                                    negrita1,
+                                    negrita,
                                     fuente1,
-                                    ancho,
-                                    alto
+                                    0,
+                                    0
                                 )
                             )
-
 
                         } catch (e: IOException) {
 
