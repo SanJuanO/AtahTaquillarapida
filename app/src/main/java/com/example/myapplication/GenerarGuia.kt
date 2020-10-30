@@ -427,12 +427,13 @@ infrome()
                         val producto2 = response.getJSONObject("guia")
 btnguia.isEnabled=false
                         FOLIO=producto2.getString("folio")
-                        imprimirguia()
                         //TODO here
                         db?.CorridasDiaModelDao()?.updateCorridaGuiaGenerada(PKCORRIDA.toInt())
                         var edit= preferencias.edit()
                         edit.putString("horario","")
                         edit.commit()
+                        imprimirguia()
+
                     } else {
                         val error = response.getString("mensaje")
                         _ShowAlert("Error", error)
@@ -578,6 +579,7 @@ btnguia.isEnabled=false
                 Utilidades.outputStream!!.write(PrintBitmap.POS_PrintBMP(bitmapqr, 295, MODE_PRINT_IMG))
                 Utilidades.outputStream.write("\n\n".toByteArray())
     progressDialog.dismiss()
+                setResult(RESULT_OK)
     finish()
 
             } catch (e: IOException) {
