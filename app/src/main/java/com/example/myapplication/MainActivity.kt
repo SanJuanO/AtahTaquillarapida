@@ -458,7 +458,8 @@ public class MainActivity : AppCompatActivity() {
 
                         } catch (es: Exception) {
                             Log.d("sergio1", "" + es.toString())
-                            finish()
+                            //finish()
+                            Toast.makeText(this,es.message,Toast.LENGTH_LONG).show()
                             progressDialog?.dismiss()
                         }
 
