@@ -66,11 +66,18 @@ class Reimprimir : AppCompatActivity() {
     var TIPO = String()
     var FORMADEPAGO = String()
     var PK_CORRIDA_DIA = String()
+    var HOST:String=""
+    var URL_CANCELAR:String="api/Boletos/Cancelar"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reimprimir)
         pk = intent.getStringExtra("pk")
+
+        HOST=getString(R.string.HOST)
+        URL_CANCELAR=HOST+URL_CANCELAR
+
         btnreimprimir.setOnClickListener(View.OnClickListener {
 
             val txtr = motivotext.text.toString()
@@ -89,6 +96,20 @@ class Reimprimir : AppCompatActivity() {
                 Toast.makeText(this, "Conecta a una impresora", Toast.LENGTH_SHORT)
 
             }
+        })
+
+        btnCancelarBoleto.setOnClickListener(View.OnClickListener {
+
+            val cancelaText = motivoCancelaText.text.toString()
+
+
+                if (cancelaText.isNullOrEmpty()) {
+                    Toast.makeText(this, "Escribe un motivo de cancelaciòn", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    cancelaBoleto()
+                }
+
         })
     }
 
@@ -426,6 +447,68 @@ class Reimprimir : AppCompatActivity() {
                             ).show()
                             e.printStackTrace()
                         }
+
+                    } else {
+                        val error = response.getString("mensaje")
+                        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+
+                    }
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+            },
+            Response.ErrorListener { error ->
+                progressDialog?.dismiss()
+                Log.e("Rest Response", error.toString())
+            }
+        ) { //here I want to post data to sever
+        }
+        val MY_SOCKET_TIMEOUT_MS = 15000
+        val maxRetries = 2
+        jsonObjectRequest.retryPolicy = DefaultRetryPolicy(
+            MY_SOCKET_TIMEOUT_MS,
+            maxRetries,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        )
+        requstQueue.add(jsonObjectRequest)
+    }
+
+    fun cancelaBoleto() {
+
+        val progressDialog = ProgressDialog(
+            this,
+            R.style.Theme_AppCompat_Light_Dialog
+        )
+        progressDialog.isIndeterminate = true
+        progressDialog.setMessage("Cargando datos...")
+        progressDialog.show()
+        val motivo = motivoCancelaText.text.toString()
+        val preferencias = this.getSharedPreferences("variables", Context.MODE_PRIVATE)
+        val VENDEDOR = preferencias.getString("nombre", "")!!+" "+ preferencias.getString("apellidos", "")!!
+
+        val datos = JSONObject()
+        try {
+            datos.put("PK", pk.toInt())
+            datos.put("MOTIVOCANCELADO", motivo)
+            datos.put("VENDEDOR", VENDEDOR)
+
+        } catch (e: JSONException) {
+            e.printStackTrace()
+        }
+        val requstQueue = Volley.newRequestQueue(this)
+        val jsonObjectRequest: JsonObjectRequest = object : JsonObjectRequest(
+            Method.POST, URL_CANCELAR, datos,
+            Response.Listener { response ->
+
+                try {
+
+                    progressDialog?.dismiss()
+                    val result = response["resultado"] as Int
+
+                    if (result == 1) {
+
+                        Toast.makeText(this, "Boleto cancelado", Toast.LENGTH_SHORT).show()
+                        finish()
 
                     } else {
                         val error = response.getString("mensaje")

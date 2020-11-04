@@ -22,13 +22,18 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import com.android.volley.DefaultRetryPolicy
+import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.myapplication.db.AppDatabase
+import com.example.myapplication.models.TipoPasajeModel
 import com.example.myapplication.permission.PermissionsChecker
 import com.example.myapplication.utilidades.PrintBitmap
 import com.example.myapplication.utilidades.Utilidades
@@ -50,6 +55,8 @@ import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.io.UnsupportedEncodingException
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -119,6 +126,10 @@ class Infracciones : Fragment() {
     lateinit var preferencias:SharedPreferences
     var db : AppDatabase?=null
     var pk_origen:String= "0"
+    val CODE_ACTIVITY_GENERAR_GUIA:Int=100
+    var URL_CORRIDAS:String="api/Corridas/getCorridasDia"
+    var HOST:String=""
+
 
     @Volatile
     private var pararLectura = false
@@ -140,6 +151,8 @@ class Infracciones : Fragment() {
         super.onActivityCreated(state)
         mContext = getActivity()?.getApplicationContext()
 
+        HOST=getString(R.string.HOST)
+        URL_CORRIDAS=HOST+URL_CORRIDAS
 
 
         db= mContext?.let {
@@ -153,18 +166,20 @@ class Infracciones : Fragment() {
         fecha = fech.format(Date())
 
 
-
+        //loadCorridas()
 
         preferencias = this.requireActivity().getSharedPreferences(
             "variables",
             Context.MODE_PRIVATE
         )
+
         val a= preferencias.getInt("cantidadlineas", 0)
         VENDEDOR= preferencias.getString("nombre", "")!! +" "+ preferencias.getString(
             "apellidos",
             ""
         )!!
-        var editPreference= preferencias.edit()
+
+        editPreference= preferencias.edit()
 
 
         pk_origen= preferencias.getString("sucursal","0")!!
@@ -173,10 +188,11 @@ class Infracciones : Fragment() {
 
         ORIGEN =preferencias.getString("sucursaltext", "")!!
 
-            FECHA=fech2.format(Date())
+        FECHA=fech2.format(Date())
         idlinea.add("0")
         lineaaa.add("Seleccione una linea")
         var lineas =db?.CorridasDiaModelDao()?.getLineas()
+
         if(lineas!=null){
             var lineaGuardada=preferencias.getString("linea","")
             for (i in 0 until lineas.size) {
@@ -197,16 +213,15 @@ class Infracciones : Fragment() {
             android.R.layout.simple_spinner_dropdown_item,
             lineaaa
         )
+
         adapter0.setDropDownViewResource(android.R.layout.simple_spinner_item)
         linea.setAdapter(adapter0)
 
-        if( posicionlinea.isNotEmpty()  && posicionlinea.toInt()>0){
+        if( posicionlinea.isNotEmpty()  && posicionlinea.toInt()>0 && lineaaa.size> posicionlinea.toInt()){
             linea.setSelection(posicionlinea.toInt())
         }
 
 //        mContext = getActivity()?.getApplicationContext()
-
-
 
         checker = PermissionsChecker(activity)
 
@@ -252,6 +267,7 @@ class Infracciones : Fragment() {
 
             }
         })
+
         linea.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 posicionlinea = linea.selectedItemPosition.toString()
@@ -277,10 +293,22 @@ class Infracciones : Fragment() {
                     tarifat.setAdapter(adapter0)
 
 
-                  //  consultar()
-                    editPreference.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
-                    editPreference.commit()
+                    //consultar()
+                    //editPreference.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
+                    //editPreference.putString("destino","")
+                    //editPreference.putString("horario","")
+                    //editPreference.commit()
+                    posiciondestino=""
+                    posicionhorario=""
                     consultar2()
+                }else{
+                    //editPreference.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
+                    //editPreference.putString("destino","")
+                    //editPreference.putString("horario","")
+                    //editPreference.commit()
+                    posiciondestino=""
+                    posicionhorario=""
+
                 }
             }
 
@@ -291,9 +319,10 @@ class Infracciones : Fragment() {
         tarifat.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
             val des = tarifat.selectedItemPosition
+
                 val t= descuento.get(des)
-              descuent=t.toDouble()
-TARIFA=pasaje.get(des)
+                descuent=t.toDouble()
+                TARIFA=pasaje.get(des)
 
                 val porcentaje=descuent/100
                 val tota= tarifa-tarifa*(porcentaje)
@@ -306,6 +335,8 @@ TARIFA=pasaje.get(des)
 
             }
         }
+
+
         horario.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 var i = horario.selectedItemPosition
@@ -313,8 +344,8 @@ TARIFA=pasaje.get(des)
 SALIDA=horarios.get(i)
                // corrida()
 
-                editPreference.putString("horario",horarios.elementAt(posicionhorario.toInt()))
-                editPreference.commit()
+                //editPreference.putString("horario",horarios.elementAt(posicionhorario.toInt()))
+                //editPreference.commit()
                 corrida2()
             }
 
@@ -341,10 +372,17 @@ SALIDA=horarios.get(i)
                  //   consultarhorarios()
                    // corrida()
 
-                    editPreference.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
-                    editPreference.commit()
+                    //editPreference.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
+                    //editPreference.putString("horario","")
+                    posicionhorario=""
+                    //editPreference.commit()
                     consultarhorarios2()
 
+                }else{
+                    //editPreference.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
+                    //editPreference.putString("horario","")
+                    posicionhorario=""
+                    //editPreference.commit()
                 }
             }
 
@@ -1267,7 +1305,11 @@ val tdestino= DESTINO2 + "\n"
         intent.putExtra("LINEA", LINEA);
         intent.putExtra("AUTOBUS", AUTOBUS);
 
-        startActivity(intent)
+        //startActivity(intent)
+        startActivityForResult(
+            intent,
+            CODE_ACTIVITY_GENERAR_GUIA
+        )
     }
     fun consultar2(){
         val pko=pk_origen.toInt()
@@ -1294,8 +1336,10 @@ val tdestino= DESTINO2 + "\n"
             val adapter2: ArrayAdapter<String> = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_dropdown_item, destinoa)
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item)
             destino.setAdapter(adapter2)
-            if(!posiciondestino.isNullOrEmpty()){
+            if(!posiciondestino.isNullOrEmpty() && destinoa.size>posiciondestino.toInt()){
                 destino.setSelection(posiciondestino.toInt())
+            }else{
+                posiciondestino="0";
             }
 
         } else {
@@ -1356,8 +1400,10 @@ val tdestino= DESTINO2 + "\n"
                     )
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
                     tarifat.setAdapter(adapter)
-                    if(!posicionhorario.isNullOrEmpty()){
+                    if(!posicionhorario.isNullOrEmpty() && pasaje.size>posicionhorario.toInt()){
                         horario.setSelection(posicionhorario.toInt())
+                    }else{
+                        posicionhorario="0"
                     }
 
                 }
@@ -1411,6 +1457,202 @@ val tdestino= DESTINO2 + "\n"
         }
 
     }
+
+    /*
+    override fun onResume() {
+        super.onResume()
+        if(!pk_origen.isNullOrEmpty() && !posicionlinea.isNullOrEmpty() && posiciondestino.isNullOrEmpty()){
+            consultarhorarios2()
+        }
+    }*/
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==CODE_ACTIVITY_GENERAR_GUIA){
+            if(resultCode== AppCompatActivity.RESULT_OK){
+                if(!pk_origen.isNullOrEmpty() && !posicionlinea.isNullOrEmpty() && posiciondestino.isNullOrEmpty()){
+                    consultarhorarios2()
+                }
+            }
+        }
+    }
+
+    /*TODO SERGIO*/
+    fun loadCorridas(){
+
+        var dia=""
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val current = LocalDateTime.now()
+            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            var answer: String =  current.format(formatter)
+            dia=answer
+            Log.d("answer",answer)
+        } else {
+            var date = Date()
+            val formatter = SimpleDateFormat("yyyy-MM-dd")
+            val answer: String = formatter.format(date)
+            dia=answer
+            Log.d("answer",answer)
+        }
+/*
+        val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val formatter = SimpleDateFormat("yyyy-MM-dd")
+        val output: String = formatter.format(parse)*/
+
+
+        val datos = JSONObject()
+        try {
+            datos.put("FECHA",dia)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        val requstQueue = Volley.newRequestQueue(requireActivity())
+        val progressDialog = ProgressDialog(requireActivity(),
+            R.style.Theme_AppCompat_Light_Dialog)
+        progressDialog.isIndeterminate = true
+        progressDialog.setMessage("Descargando corridas...")
+        progressDialog.show()
+        val jsonObjectRequest = object : JsonObjectRequest(
+            Request.Method.POST, URL_CORRIDAS, datos,
+            Response.Listener<JSONObject> { response ->
+                try {
+                    progressDialog?.dismiss()
+                    val result = response.get("resultado") as Int
+                    progressDialog?.dismiss()
+                    if (result == 1) {
+                        try {
+
+                            var corridasDiaList=ArrayList<CorridasDiaModel>()
+                            val corridas = response.getJSONArray("corridas")
+
+                            for (i in 0 until corridas.length()) {
+                                val corrida = corridas.getJSONObject(i)
+                                var corridaM=CorridasDiaModel();
+                                corridaM.PK=corrida.getInt("pk")
+                                corridaM.PK_LINEA=corrida.getInt("pK_LINEA")
+                                corridaM.LINEA=corrida.getString("linea")
+                                corridaM.PK_ROL=corrida.getInt("pK_ROL")
+                                corridaM.ROL=corrida.getString("rol")
+                                corridaM.PK_CORRIDA=corrida.getInt("pK_CORRIDA")
+                                corridaM.NO_CORRIDA=corrida.getInt("nO_CORRIDA")
+                                corridaM.CORRIDA_DESCRIPCION=corrida.getString("corridA_DESCRIPCION")
+                                corridaM.PK_AUTOBUS=corrida.getInt("pK_AUTOBUS")
+                                corridaM.AUTOBUS=corrida.getString("autobus")
+                                corridaM.TIPO_PK=corrida.getInt("tipO_PK")
+                                corridaM.PK_ORIGEN=corrida.getInt("pK_ORIGEN")
+                                corridaM.ORIGEN=corrida.getString("origen")
+                                corridaM.SALIDA=corrida.getString("salida")
+                                corridaM.PK_DESTINO=corrida.getInt("pK_DESTINO")
+                                corridaM.DESTINO=corrida.getString("destino")
+                                corridaM.LLEGADA=corrida.getString("llegada")
+                                corridaM.ESCALA=corrida.getString("escala")
+                                corridaM.FECHA=corrida.getString("fecha")
+                                corridaM.PK_RUTA=corrida.getInt("pK_RUTA")
+                                corridaM.RUTA=corrida.getString("ruta")
+                                corridaM.PK_CORRIDA_RUTA=corrida.getInt("pK_CORRIDA_RUTA")
+                                corridaM.BLOQUEADO=corrida.getString("bloqueado")
+                                corridaM.GUIA=corrida.getString("guia")
+                                corridaM.COMPLETO=corrida.getString("completo")
+                                corridaM.PK_ORIGEN_COMPLETO=corrida.getInt("pK_ORIGEN_COMPLETO")
+                                corridaM.ORIGEN_COMPLETO=corrida.getString("origeN_COMPLETO")
+                                corridaM.SALIDA_COMPLETO=corrida.getString("salidA_COMPLETO")
+                                corridaM.SALIDA_C=corrida.getString("salidA_C")
+                                corridaM.PK_DESTINO_COMPLETO=corrida.getInt("pK_DESTINO_COMPLETO")
+                                corridaM.DESTINO_COMPLETO=corrida.getString("destinO_COMPLETO")
+                                corridaM.LLEGADA_COMPLETO=corrida.getString("llegadA_COMPLETO")
+                                corridaM.LLEGADA_C=corrida.getString("llegadA_C")
+                                corridaM.FECHA_C=corrida.getString("fechA_C")
+                                corridaM.FECHA_M=corrida.getString("fechA_M")
+                                corridaM.USUARIO=corrida.getString("usuario")
+                                corridaM.PK_CHOFER=corrida.getInt("pK_CHOFER")
+                                corridaM.NOMBRE=corrida.getString("nombre")
+                                corridaM.APELLIDOS=corrida.getString("apellidos")
+                                corridaM.PISOS=corrida.getString("pisos")
+                                corridaM.TIEMPO=corrida.getString("tiempo")
+                                corridaM.PRECIO=corrida.getDouble("precio")
+                                corridasDiaList.add(corridaM)
+
+                            }
+                            db?.CorridasDiaModelDao()?.deleteAllCorridas()
+                            db?.CorridasDiaModelDao()?.insertAll(corridasDiaList)
+
+
+                            var tarifasList=ArrayList<TipoPasajeModel>()
+                            val tarifas = response.getJSONArray("tarifas")
+
+                            for (i in 0 until tarifas.length()) {
+
+                                val tarifa = tarifas.getJSONObject(i)
+                                var tarifaM= TipoPasajeModel();
+                                tarifaM.PKI=tarifa.getInt("pki")
+                                tarifaM.PASAJE=tarifa.getString("pasaje")
+                                tarifaM.PKLINEA=tarifa.getInt("pklinea")
+                                tarifaM.PORCENTAJE=tarifa.getDouble("porcentaje")
+                                tarifaM.BORRADO=tarifa.getBoolean("borrado")
+                                tarifaM.ACTIVO=tarifa.getBoolean("activo")
+                                tarifaM.USUARIO_M=tarifa.getString("usuariO_M")
+                                tarifaM.PERMITIDOS=tarifa.getInt("permitidos")
+                                tarifaM.COLOR=tarifa.getString("color")
+                                tarifasList.add(tarifaM)
+
+                            }
+                            db?.TipoPasajeModelDao()?.deleteAllTipoPasajeModel()
+                            db?.TipoPasajeModelDao()?.insertAll(tarifasList)
+                            Toast.makeText(mContext,"Cantidad corridas "+db?.CorridasDiaModelDao()?.countCorridas()+" Cantidad tarifas: "+tarifasList.size,Toast.LENGTH_SHORT).show()
+
+
+
+                        } catch (es: Exception) {
+                            Log.d("sergio1", "" + es.toString())
+                            progressDialog?.dismiss()
+                        }
+
+                    } else {
+                        Toast.makeText(mContext, "sin conexion", Toast.LENGTH_SHORT).show()
+                    }
+
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                    progressDialog?.dismiss()
+                }
+            },
+            object : Response.ErrorListener {
+                override fun onErrorResponse(error: VolleyError) {
+
+                }
+            }
+        ) {
+
+            //here I want to post data to sever
+        }
+
+        val MY_SOCKET_TIMEOUT_MS = 15000
+        val maxRetries = 2
+        jsonObjectRequest.setRetryPolicy(
+            DefaultRetryPolicy(
+                MY_SOCKET_TIMEOUT_MS,
+                maxRetries,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+            )
+        )
+
+        requstQueue.add(jsonObjectRequest)
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        editPreference?.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
+        editPreference?.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
+        editPreference?.putString("horario",horarios.elementAt(posicionhorario.toInt()))
+        editPreference?.commit()
+
+    }
+
+    /*END TODO SERGIO*/
+
 
 }
 

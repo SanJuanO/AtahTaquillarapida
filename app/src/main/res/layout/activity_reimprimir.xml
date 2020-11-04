@@ -14,7 +14,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -105,26 +106,78 @@
                 </LinearLayout>
 
 
-
-
-
                 <Button
                     android:id="@+id/btnreimprimir"
+                    style="@style/btnred"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/ll4"
-                    android:layout_marginTop="100dp"
-                    android:layout_marginBottom="20dp"
-                    style="@style/btnred"
-                    android:layout_marginRight="20dp"
+                    android:layout_below="@+id/lltd"
                     android:layout_marginLeft="20dp"
-                    android:text="Reimprimir boleto"
-                    />
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Reimprimir boleto" />
 
 
 
 
             </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clCancelarBoletoDiv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvLabelEscribemotivocancela"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="Escribe el motivo de cancelaciòn"
+                    android:textColor="@color/aata"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/motivoCancelaText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textColor="@color/ablack"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvLabelEscribemotivocancela"
+                    app:layout_constraintStart_toStartOf="@+id/tvLabelEscribemotivocancela"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLabelEscribemotivocancela" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/ablack"
+                    app:layout_constraintEnd_toEndOf="@+id/motivoCancelaText"
+                    app:layout_constraintStart_toStartOf="@+id/motivoCancelaText"
+                    app:layout_constraintTop_toBottomOf="@+id/motivoCancelaText" />
+
+                <Button
+                    android:id="@+id/btnCancelarBoleto"
+                    style="@style/btnredCancelar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Cancelar boleto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintStart_toStartOf="@+id/view"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
 

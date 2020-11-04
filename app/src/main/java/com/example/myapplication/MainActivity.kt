@@ -68,7 +68,7 @@ public class MainActivity : AppCompatActivity() {
     // Para el flujo de datos de entrada y salida del socket bluetooth
      var outputStream: OutputStream? = null
      var inputStream: InputStream? = null
-
+    var vent:Infracciones?=null
 
 
     @Volatile
@@ -93,17 +93,12 @@ public class MainActivity : AppCompatActivity() {
             applicationContext,
             AppDatabase::class.java, "autobuses"
         ).allowMainThreadQueries().fallbackToDestructiveMigration().build()
-
         HOST=getString(R.string.HOST)
         URL_CORRIDAS=HOST+URL_CORRIDAS
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationViewinicio)
-        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        val vent = Infracciones.newInstance()
-        openFragment(vent)
-        ibDescargarCorridas.setOnClickListener(View.OnClickListener {
-            loadCorridas();
-        })
+
         loadCorridas();
+
+
 
     }
     override fun onBackPressed() { // Añade más funciones si fuese necesario
@@ -449,6 +444,17 @@ public class MainActivity : AppCompatActivity() {
                             db?.TipoPasajeModelDao()?.deleteAllTipoPasajeModel()
                             db?.TipoPasajeModelDao()?.insertAll(tarifasList)
                             Toast.makeText(this,"Cantidad corridas "+db?.CorridasDiaModelDao()?.countCorridas()+" Cantidad tarifas: "+tarifasList.size,Toast.LENGTH_SHORT).show()
+
+                            val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationViewinicio)
+                            bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+                            vent = Infracciones.newInstance()
+                            if(vent!=null){
+                                openFragment(vent!!)
+                                ibDescargarCorridas.setOnClickListener(View.OnClickListener {
+                                    loadCorridas();
+                                })
+
+                            }
 
                         } catch (es: Exception) {
                             Log.d("sergio1", "" + es.toString())
