@@ -161,6 +161,8 @@ class Reimprimir : AppCompatActivity() {
 
 
                         try {
+                            val treimpresion  =  "    REIMPRESIÓN DE BOLETO"  + "\n"
+
                             val texto1 = "FECHA:" + FECHA
                             val tlinea  =  "  LINEA:" + LINEA + "\n"
                             // val texto11 = FECHA+ "  "+LINEA+"\n"
@@ -236,6 +238,16 @@ class Reimprimir : AppCompatActivity() {
                                     alto
                                 )
                             )
+                            Utilidades.outputStream!!.write(
+                                getByteString(
+                                    treimpresion,
+                                    negrita1,
+                                    fuente,
+                                    ancho,
+                                    alto
+                                )
+                            )
+
                             Utilidades.outputStream!!.write(
                                 getByteString(
                                     texto4,
