@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import com.android.volley.DefaultRetryPolicy
@@ -171,12 +172,14 @@ class Infracciones : Fragment() {
             "variables",
             Context.MODE_PRIVATE
         )
+
         val a= preferencias.getInt("cantidadlineas", 0)
         VENDEDOR= preferencias.getString("nombre", "")!! +" "+ preferencias.getString(
             "apellidos",
             ""
         )!!
-        var editPreference= preferencias.edit()
+
+        editPreference= preferencias.edit()
 
 
         pk_origen= preferencias.getString("sucursal","0")!!
@@ -185,10 +188,11 @@ class Infracciones : Fragment() {
 
         ORIGEN =preferencias.getString("sucursaltext", "")!!
 
-            FECHA=fech2.format(Date())
+        FECHA=fech2.format(Date())
         idlinea.add("0")
         lineaaa.add("Seleccione una linea")
         var lineas =db?.CorridasDiaModelDao()?.getLineas()
+
         if(lineas!=null){
             var lineaGuardada=preferencias.getString("linea","")
             for (i in 0 until lineas.size) {
@@ -209,16 +213,15 @@ class Infracciones : Fragment() {
             android.R.layout.simple_spinner_dropdown_item,
             lineaaa
         )
+
         adapter0.setDropDownViewResource(android.R.layout.simple_spinner_item)
         linea.setAdapter(adapter0)
 
-        if( posicionlinea.isNotEmpty()  && posicionlinea.toInt()>0){
+        if( posicionlinea.isNotEmpty()  && posicionlinea.toInt()>0 && lineaaa.size> posicionlinea.toInt()){
             linea.setSelection(posicionlinea.toInt())
         }
 
 //        mContext = getActivity()?.getApplicationContext()
-
-
 
         checker = PermissionsChecker(activity)
 
@@ -290,19 +293,19 @@ class Infracciones : Fragment() {
                     tarifat.setAdapter(adapter0)
 
 
-                  //  consultar()
-                    editPreference.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
-                    editPreference.putString("destino","")
-                    editPreference.putString("horario","")
-                    editPreference.commit()
+                    //consultar()
+                    //editPreference.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
+                    //editPreference.putString("destino","")
+                    //editPreference.putString("horario","")
+                    //editPreference.commit()
                     posiciondestino=""
                     posicionhorario=""
                     consultar2()
                 }else{
-                    editPreference.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
-                    editPreference.putString("destino","")
-                    editPreference.putString("horario","")
-                    editPreference.commit()
+                    //editPreference.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
+                    //editPreference.putString("destino","")
+                    //editPreference.putString("horario","")
+                    //editPreference.commit()
                     posiciondestino=""
                     posicionhorario=""
 
@@ -316,9 +319,10 @@ class Infracciones : Fragment() {
         tarifat.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
             val des = tarifat.selectedItemPosition
+
                 val t= descuento.get(des)
-              descuent=t.toDouble()
-TARIFA=pasaje.get(des)
+                descuent=t.toDouble()
+                TARIFA=pasaje.get(des)
 
                 val porcentaje=descuent/100
                 val tota= tarifa-tarifa*(porcentaje)
@@ -331,6 +335,8 @@ TARIFA=pasaje.get(des)
 
             }
         }
+
+
         horario.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 var i = horario.selectedItemPosition
@@ -338,8 +344,8 @@ TARIFA=pasaje.get(des)
 SALIDA=horarios.get(i)
                // corrida()
 
-                editPreference.putString("horario",horarios.elementAt(posicionhorario.toInt()))
-                editPreference.commit()
+                //editPreference.putString("horario",horarios.elementAt(posicionhorario.toInt()))
+                //editPreference.commit()
                 corrida2()
             }
 
@@ -366,17 +372,17 @@ SALIDA=horarios.get(i)
                  //   consultarhorarios()
                    // corrida()
 
-                    editPreference.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
-                    editPreference.putString("horario","")
+                    //editPreference.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
+                    //editPreference.putString("horario","")
                     posicionhorario=""
-                    editPreference.commit()
+                    //editPreference.commit()
                     consultarhorarios2()
 
                 }else{
-                    editPreference.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
-                    editPreference.putString("horario","")
+                    //editPreference.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
+                    //editPreference.putString("horario","")
                     posicionhorario=""
-                    editPreference.commit()
+                    //editPreference.commit()
                 }
             }
 
@@ -1330,8 +1336,10 @@ val tdestino= DESTINO2 + "\n"
             val adapter2: ArrayAdapter<String> = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_dropdown_item, destinoa)
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item)
             destino.setAdapter(adapter2)
-            if(!posiciondestino.isNullOrEmpty()){
+            if(!posiciondestino.isNullOrEmpty() && destinoa.size>posiciondestino.toInt()){
                 destino.setSelection(posiciondestino.toInt())
+            }else{
+                posiciondestino="0";
             }
 
         } else {
@@ -1392,8 +1400,10 @@ val tdestino= DESTINO2 + "\n"
                     )
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
                     tarifat.setAdapter(adapter)
-                    if(!posicionhorario.isNullOrEmpty()){
+                    if(!posicionhorario.isNullOrEmpty() && pasaje.size>posicionhorario.toInt()){
                         horario.setSelection(posicionhorario.toInt())
+                    }else{
+                        posicionhorario="0"
                     }
 
                 }
@@ -1630,6 +1640,17 @@ val tdestino= DESTINO2 + "\n"
         requstQueue.add(jsonObjectRequest)
 
     }
+
+    override fun onPause() {
+        super.onPause()
+
+        editPreference?.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
+        editPreference?.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
+        editPreference?.putString("horario",horarios.elementAt(posicionhorario.toInt()))
+        editPreference?.commit()
+
+    }
+
     /*END TODO SERGIO*/
 
 
