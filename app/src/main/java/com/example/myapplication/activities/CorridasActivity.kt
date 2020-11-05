@@ -76,7 +76,7 @@ class CorridasActivity : AppCompatActivity() {
 */
         viewManager = LinearLayoutManager(this)
         viewAdapter = CorridasAdapter(this,Corridas!!)
-        my_recycler_view.adapter = viewAdapter
+        my_recycler_view_corridas.adapter = viewAdapter
         /*
         recyclerView = findViewById<RecyclerView>(R.id.my_recycler_view).apply {
             // use this setting to improve performance if you know that changes
@@ -178,8 +178,8 @@ class CorridasActivity : AppCompatActivity() {
 
                             }
                             viewAdapter = CorridasAdapter(this,Corridas!!)
-                            my_recycler_view.adapter = viewAdapter
-                            my_recycler_view.adapter?.notifyDataSetChanged()
+                            my_recycler_view_corridas.adapter = viewAdapter
+                            my_recycler_view_corridas.adapter?.notifyDataSetChanged()
 
                         } catch (es: Exception) {
                             Log.d("sergio1", "" + es.toString())
