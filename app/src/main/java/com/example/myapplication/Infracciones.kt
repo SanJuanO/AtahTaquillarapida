@@ -1490,6 +1490,11 @@ val tdestino= DESTINO2 + "\n"
                     consultarhorarios2()
                 }
             }
+        }else if(requestCode==CODE_ACTIVITY_CORRIDAS){
+            if(resultCode== AppCompatActivity.RESULT_OK){
+                loadCorridas();
+
+            }
         }
     }
 
@@ -1616,7 +1621,7 @@ val tdestino= DESTINO2 + "\n"
                             db?.TipoPasajeModelDao()?.deleteAllTipoPasajeModel()
                             db?.TipoPasajeModelDao()?.insertAll(tarifasList)
                             Toast.makeText(mContext,"Cantidad corridas "+db?.CorridasDiaModelDao()?.countCorridas()+" Cantidad tarifas: "+tarifasList.size,Toast.LENGTH_SHORT).show()
-
+                            consultar2()
 
 
                         } catch (es: Exception) {

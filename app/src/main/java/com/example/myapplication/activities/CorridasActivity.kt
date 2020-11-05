@@ -174,10 +174,12 @@ class CorridasActivity : AppCompatActivity() {
                                 //corridaM.PISOS=corrida.getString("pisos")
                                 corridaM.TIEMPO=corrida.getString("tiempo")
                                 //corridaM.PRECIO=corrida.getDouble("precio")
-                                Corridas!!.add(corridaM)
+                                Corridas?.add(corridaM)
 
                             }
-                            viewAdapter.notifyDataSetChanged()
+                            viewAdapter = CorridasAdapter(this,Corridas!!)
+                            my_recycler_view.adapter = viewAdapter
+                            my_recycler_view.adapter?.notifyDataSetChanged()
 
                         } catch (es: Exception) {
                             Log.d("sergio1", "" + es.toString())

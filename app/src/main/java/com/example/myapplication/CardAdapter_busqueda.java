@@ -74,7 +74,7 @@ public class CardAdapter_busqueda extends RecyclerView.Adapter<CardAdapter_busqu
             ubicacionn.setText(planet.getUbicacionn());
             folion.setText(planet.getFolion());
             fechan.setText(planet.getFechan());
-            }
+        }
 
         void bind(final Planet employee) {
 
