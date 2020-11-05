@@ -18,6 +18,7 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.myapplication.CardAdapter_busqueda_boletos
 import com.example.myapplication.CorridasDiaModel
 import com.example.myapplication.Infracciones
 import com.example.myapplication.R
@@ -52,6 +53,7 @@ class CorridasActivity : AppCompatActivity() {
     var URL_ACTUALIZA_AUTOBUS:String="api/Corridas/CambioAutobusApp"
     var usuario=""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_corridas)
@@ -74,10 +76,16 @@ class CorridasActivity : AppCompatActivity() {
 
         Corridas=db?.CorridasDiaModelDao()?.loadCorridasByFiltro(pk_origen.toInt(),pk_linea.toInt())
 */
+        recyclerView = findViewById<View>(R.id.my_recycler_view_corridas) as RecyclerView
+        recyclerView!!.layoutManager = LinearLayoutManager(this)
+        viewAdapter = CorridasAdapter(this, Corridas!!)
+        recyclerView.adapter = viewAdapter
+
+/*
         viewManager = LinearLayoutManager(this)
         viewAdapter = CorridasAdapter(this,Corridas!!)
         my_recycler_view_corridas.adapter = viewAdapter
-        /*
+
         recyclerView = findViewById<RecyclerView>(R.id.my_recycler_view).apply {
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView
