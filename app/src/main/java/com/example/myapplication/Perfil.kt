@@ -33,8 +33,8 @@ class Perfil : Fragment() {
 
         var  telefono= preferencias.getString("sucursaltext", "").toString()
 
-        nombretext.text=nombre
-        direcciontext.text=telefono
+        nombretext.text="Usuario:"+nombre
+        direcciontext.text="Sucursal:"+telefono
         cerrarcesion.setOnClickListener(View.OnClickListener {
             cerrarsesio()
         })
@@ -52,5 +52,6 @@ class Perfil : Fragment() {
         startActivity(intent)
         requireActivity().finish();
     }
+
 
 }

@@ -884,6 +884,7 @@ var t = TARIFA
                             val texto4 = "ORIGEN:"+org2
                             val textodest="DESTINO:"+"\n"
 val tdestino= DESTINO2 + "\n"
+                            val tarifatext="    TARIFA:"+TARIFA+"\n"
 
                             //     val texto5 = "          SALIDA:"+"\n"
                             //   val texto55 = "       "+SALIDA+"\n"
@@ -1022,6 +1023,15 @@ val tdestino= DESTINO2 + "\n"
                                     fuente,
                                     ancho,
                                     alto
+                                )
+                            )
+                            outputStream!!.write(
+                                getByteString(
+                                    tarifatext,
+                                    2,
+                                    fuente1,
+                                    1,
+                                    1
                                 )
                             )
 //                            outputStream!!.write(
@@ -1487,6 +1497,7 @@ val tdestino= DESTINO2 + "\n"
         if(requestCode==CODE_ACTIVITY_GENERAR_GUIA){
             if(resultCode== AppCompatActivity.RESULT_OK){
                 if(!pk_origen.isNullOrEmpty() && !posicionlinea.isNullOrEmpty() && posiciondestino.isNullOrEmpty()){
+                    loadCorridas();
                     consultarhorarios2()
                 }
             }
