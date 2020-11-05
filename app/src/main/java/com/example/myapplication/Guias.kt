@@ -132,7 +132,7 @@ class Guias : Fragment() {
        val fecha = fech.format(Date())
         val datos = JSONObject()
         try {
-            datos.put("validador",nombre)
+            datos.put("PKUSUARIO",pk)
             datos.put("FECHAC",fecha)
 
         } catch (e: JSONException) {
