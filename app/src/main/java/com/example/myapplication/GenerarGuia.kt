@@ -387,7 +387,8 @@ infrome()
 
 
         val preferencias = this.getSharedPreferences("variables", Context.MODE_PRIVATE)
-         SUCURSAL= preferencias.getString("sucursaltext","MEXICO CARCEL")!!
+      var  pkuser= preferencias.getString("pk","1")!!
+        SUCURSAL= preferencias.getString("sucursaltext","MEXICO CARCEL")!!
          VALIDADOR= preferencias.getString("nombre", "").toString()+" "+
                  preferencias.getString("apellidos", "").toString()
 
@@ -409,6 +410,7 @@ infrome()
             datos.put("TSALIDA", TS)
             datos.put("TTURNO", TT)
             datos.put("TPASO", TP)
+            datos.put("PKUSUARIO", pkuser)
             datos.put("PKCORRIDA", PKCORRIDA)
             datos.put("FOLIOSVENDIDOS", FOLIOSVENDIDOS)
             datos.put("IMPORTE", IMPORTE)
