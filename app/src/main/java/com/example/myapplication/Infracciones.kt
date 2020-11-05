@@ -32,6 +32,7 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.myapplication.activities.CorridasActivity
 import com.example.myapplication.db.AppDatabase
 import com.example.myapplication.models.TipoPasajeModel
 import com.example.myapplication.permission.PermissionsChecker
@@ -127,6 +128,7 @@ class Infracciones : Fragment() {
     var db : AppDatabase?=null
     var pk_origen:String= "0"
     val CODE_ACTIVITY_GENERAR_GUIA:Int=100
+    val CODE_ACTIVITY_CORRIDAS:Int=101
     var URL_CORRIDAS:String="api/Corridas/getCorridasDia"
     var HOST:String=""
 
@@ -239,6 +241,20 @@ class Infracciones : Fragment() {
                 )
 
             }
+        })
+
+        btnCorridas.setOnClickListener(View.OnClickListener {
+            if(!PKCORRIDA.isNullOrEmpty()){
+                val intent = Intent(requireActivity(), CorridasActivity::class.java)
+                intent.putExtra("PK_CORRIDA", PKCORRIDA);
+
+                //startActivity(intent)
+                startActivityForResult(
+                    intent,
+                    CODE_ACTIVITY_CORRIDAS
+                )
+            }
+
         })
 //        total.addTextChangedListener(object : TextWatcher {
 //            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
@@ -1644,9 +1660,15 @@ val tdestino= DESTINO2 + "\n"
     override fun onPause() {
         super.onPause()
 
-        editPreference?.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
-        editPreference?.putString("destino",destinoa.elementAt(posiciondestino.toInt()))
-        editPreference?.putString("horario",horarios.elementAt(posicionhorario.toInt()))
+        if(!posicionlinea.isNullOrEmpty()){
+            editPreference?.putString("linea",lineaaa.elementAt(posicionlinea.toInt()))
+        }
+        if(!posiciondestino.isNullOrEmpty()) {
+            editPreference?.putString("destino", destinoa.elementAt(posiciondestino.toInt()))
+        }
+        if(!posicionhorario.isNullOrEmpty()){
+            editPreference?.putString("horario",horarios.elementAt(posicionhorario.toInt()))
+        }
         editPreference?.commit()
 
     }
