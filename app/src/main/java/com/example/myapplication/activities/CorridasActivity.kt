@@ -272,7 +272,8 @@ class CorridasActivity : AppCompatActivity() {
                         }
 
                     } else {
-                        Toast.makeText(this, "sin conexion", Toast.LENGTH_SHORT).show()
+                        var msg=response.getString("mensaje")
+                        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
                     }
 
                 } catch (e: JSONException) {
