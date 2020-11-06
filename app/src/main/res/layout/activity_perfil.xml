@@ -323,7 +323,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/gimporte"
+                        android:id="@+id/gimportet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -344,7 +344,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/gcompbanco"
+                        android:id="@+id/gcompbancot"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -365,19 +365,19 @@ android:layout_below="@id/importes"
                     android:weightSum="4"
                     android:orientation="horizontal">
 
-
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
-                        android:text="  Aportaciones:"
+                        android:text="  Aportacion:"
                         android:layout_weight="1 "
                         android:textColor="@color/aata"
                         android:textSize="16sp"
                         android:textStyle="bold" />
+
                     <TextView
-                        android:id="@+id/gaportacion"
+                        android:id="@+id/gaportaciont"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -398,7 +398,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/gturno"
+                        android:id="@+id/gturnot"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -432,7 +432,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/gsalida"
+                        android:id="@+id/gsalidat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -453,7 +453,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/gpaso"
+                        android:id="@+id/gpasot"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -485,7 +485,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/giva"
+                        android:id="@+id/givat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -506,7 +506,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/ggastos"
+                        android:id="@+id/ggastost"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -541,7 +541,7 @@ android:layout_below="@id/importes"
 
 
                     <TextView
-                        android:id="@+id/gtotal"
+                        android:id="@+id/gtotalt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -585,7 +585,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/cventa"
+                        android:id="@+id/cventat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
@@ -604,7 +604,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/ccancelados"
+                        android:id="@+id/ccanceladost"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
@@ -634,7 +634,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/canticipados"
+                        android:id="@+id/canticipadost"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -655,7 +655,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/ctarjetas"
+                        android:id="@+id/ctarjetast"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -687,7 +687,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/ccomision"
+                        android:id="@+id/ccomisiont"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -708,7 +708,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/caportacion"
+                        android:id="@+id/caportaciont"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -792,7 +792,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/cefectivo"
+                        android:id="@+id/cefectivot"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -814,7 +814,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/cvales"
+                        android:id="@+id/cvalest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -846,7 +846,7 @@ android:layout_below="@id/importes"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/centregar"
+                        android:id="@+id/centregart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
