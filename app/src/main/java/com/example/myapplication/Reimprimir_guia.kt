@@ -5,6 +5,7 @@ import android.app.ProgressDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.graphics.BitmapFactory
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
@@ -65,6 +66,8 @@ var pk=""
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reimprimir)
         pk = intent.getStringExtra("pk")
+        clCancelarBoletoDiv.visibility=View.INVISIBLE;
+        btnreimprimir.setText("REIMPRIMIR GUIA")
         btnreimprimir.setOnClickListener(View.OnClickListener {
 
             val txtr = motivotext.text.toString()

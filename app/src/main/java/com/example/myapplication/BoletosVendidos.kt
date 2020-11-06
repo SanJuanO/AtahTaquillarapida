@@ -124,14 +124,21 @@ class BoletosVendidos : Fragment() {
                         val costos = response.getJSONArray("vendidos")
                         for (i in 0 until costos.length()) {
                             val producto = costos.getJSONObject(i)
+var color="";
+                            if(producto.getString("status")=="CANCELADO"){
+                                color="#ED3734";
+
+                            }else{
+                                color="#34C0ED";
+                            }
 
                             var planet = Planet("  Folio:"+
-                                producto.getString("folio"),
+                                producto.getString("folio")+"                     "+"ESTATUS:"+producto.getString("status"),
                                 "  Total:"+"$"+producto.getString("precio")+ System.getProperty ("line.separator")+"  Tarifa:"+   producto.getString("tarifa"),
                                 "  Asiento:"+producto.getString("asiento"),
                                 " "+producto.getString("sucursal")+"-"+producto.getString("destinoboleto"),
                                 producto.getString("salida"),
-                                producto.getString("pk"),""
+                                producto.getString("pk"),color
                             )
                             planetArrayList!!.add(planet)
                         }

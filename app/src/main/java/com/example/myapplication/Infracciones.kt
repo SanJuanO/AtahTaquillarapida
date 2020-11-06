@@ -776,8 +776,9 @@ val pko=pk_origen.toInt()
         val pkd=pkdestino.get(posiciondestino.toInt())
         val datos = JSONObject()
         try {
+            button4.isEnabled=false;
 
-TIPO="PIE"
+            TIPO="PIE"
             STATUS="VENDIDO"
             FILA="100"
             COLUMNA="100"
@@ -813,6 +814,8 @@ var t = TARIFA
 
         } catch (e: JSONException) {
             e.printStackTrace()
+            button4.isEnabled=true;
+
         }
         val requstQueue = Volley.newRequestQueue(requireActivity())
         val jsonObjectRequest: JsonObjectRequest = @RequiresApi(Build.VERSION_CODES.O)
@@ -1125,8 +1128,10 @@ val tdestino= DESTINO2 + "\n"
                                 )
                             )
 
+                            button4.isEnabled=true;
 
                         } catch (e: IOException) {
+                            button4.isEnabled=true;
 
                             Toast.makeText(
                                 requireActivity(),
@@ -1137,17 +1142,23 @@ val tdestino= DESTINO2 + "\n"
                         }
 
                     } else {
+                        button4.isEnabled=true;
+
                         val error = response.getString("mensaje")
                         Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
 
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()
+                    button4.isEnabled=true;
+
                 }
             },
             Response.ErrorListener { error ->
                 progressDialog?.dismiss()
                 Log.e("Rest Response", error.toString())
+                button4.isEnabled=true;
+
             }
         ) { //here I want to post data to sever
         }
