@@ -510,6 +510,7 @@ class Reimprimir : AppCompatActivity() {
                         Toast.makeText(this, "Boleto cancelado", Toast.LENGTH_SHORT).show()
                         finish()
 
+
                     } else {
                         val error = response.getString("mensaje")
                         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()

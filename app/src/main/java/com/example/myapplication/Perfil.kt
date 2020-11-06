@@ -271,7 +271,7 @@ var cantidadvendidos= vendidos.length()
 
                             bestado.add( vend.getString("status"))
                             btotal.add( vend.getString("precio"))
-                            pkboletos.add( vend.getString("pk"))
+                                pkboletos.add( vend.getString("pk"))
 
                             if( vend.getString("status")=="CANCELADO") {
 
@@ -297,7 +297,7 @@ var cantidadvendidos= vendidos.length()
                         biexpedidos = 0.0;
 
                         val guias = response.getJSONArray("guias")
-var cantidadguias=guias.length()
+                            var cantidadguias=guias.length()
                         for (o in 0 until cantidadguias) {
                             val guia = guias.getJSONObject(o)
 
@@ -315,21 +315,24 @@ var cantidadguias=guias.length()
                             ggastos.add( guia.getString("anticipo"))
                             gtotal.add( guia.getString("total"))
                             pkguias.add( guia.getString("pk"))
-                            ggimporte = ggimporte+ guia.getDouble("importe");
-                            ggaportacion = ggaportacion+ guia.getDouble("aportacion") ;
-                            ggcompbanco = ggcompbanco+ guia.getDouble("compban") ;
-                            ggdisel = ggdisel+ guia.getDouble("diesel") ;
-                            ggcaseta = ggcaseta+ guia.getDouble("caseta") ;
+                            ggimporte =String.format("%.1f",  ggimporte+ guia.getDouble("importe")).toDouble();
+                            ggaportacion =String.format("%.1f",  ggaportacion+ guia.getDouble("aportacion") ).toDouble();
+                            ggcompbanco =String.format("%.1f",  ggcompbanco+ guia.getDouble("compban") ).toDouble();
+                            ggdisel =String.format("%.1f",  ggdisel+ guia.getDouble("diesel") ).toDouble();
+                            ggcaseta =String.format("%.1f",  ggcaseta+ guia.getDouble("caseta") ).toDouble();
 
-                            ggtturno = ggtturno+ guia.getDouble("tturno") ;
-                            ggtpaso = ggtpaso+ guia.getDouble("tpaso") ;
-                            ggtsalida = ggtsalida+ guia.getDouble("tsalida") ;
-                            ggiva = ggiva+ guia.getDouble("iva") ;
+                            ggtturno =String.format("%.1f",  ggtturno+ guia.getDouble("tturno") ).toDouble();
+                            ggtpaso =String.format("%.1f",  ggtpaso+ guia.getDouble("tpaso") ).toDouble();
+                            ggtsalida = String.format("%.1f", ggtsalida+ guia.getDouble("tsalida") ).toDouble();
+                            ggiva =String.format("%.1f",  ggiva+ guia.getDouble("iva") ).toDouble();
 
-                                gggastos = gggastos+ guia.getDouble("anticipo") ;
-                            ggtotal = ggtotal+ guia.getDouble("total") ;
+                                gggastos = String.format("%.1f", gggastos+ guia.getDouble("anticipo") ).toDouble();
+                                        ggtotal = String.format("%.1f", ggtotal+ guia.getDouble("total") ).toDouble();
 
-ctarjetas=ctarjetas+guia.getDouble("tturno")+guia.getDouble("tpaso")+guia.getDouble("tsalida")
+ctarjetas=String.format("%.1f", ctarjetas+guia.getDouble("tturno")+guia.getDouble("tpaso")+guia.getDouble("tsalida")).toDouble();
+
+
+
                         }
 
                         ggemitidas = guias.length();
@@ -340,15 +343,18 @@ ctarjetas=ctarjetas+guia.getDouble("tturno")+guia.getDouble("tpaso")+guia.getDou
 
 
 
-                        cventa = biemitios;
-                        cancelado = bicancelados;
-                        canticipo = gggastos;
-                        ccomision = 0.0;
-                        caportacion = ggaportacion;
-                        ctarjetadebito = 0.0;
-                        ctarjetacredio = 0.0;
+                        cventa =String.format("%.1f", biemitios).toDouble();
+                        cancelado = String.format("%.1f", bicancelados).toDouble();
+                        canticipo = String.format("%.1f", gggastos).toDouble();
+                        ccomision = String.format("%.1f", 0.0).toDouble();
+                        caportacion =String.format("%.1f", ggaportacion).toDouble();
+                        ctarjetadebito =  String.format("%.1f", 0.0).toDouble();
+                        ctarjetacredio = String.format("%.1f", 0.0).toDouble();
                         cefectivo = biventa-gggastos;
+                        cefectivo =String.format("%.1f", cefectivo).toDouble();
+
                         ctotalentregar =  biventa-gggastos;
+                        ctotalentregar =String.format("%.1f", ctotalentregar).toDouble();
                         cvales = 0.0;
 
 
@@ -492,6 +498,8 @@ ctarjetas=ctarjetas+guia.getDouble("tturno")+guia.getDouble("tpaso")+guia.getDou
             datos.put("GTPASO", ggtpaso)
             datos.put("GTSALIDA", ggtsalida)
             datos.put("PKUSUARIO", pkusuario)
+            datos.put("ListaVendidos", arregloboletos)
+            datos.put("ListaGuias", arregloguias)
 
         } catch (e: JSONException) {
             e.printStackTrace()
