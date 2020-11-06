@@ -66,6 +66,7 @@ public class CardAdapter_busqueda_boletos extends RecyclerView.Adapter<CardAdapt
             folion = itemView.findViewById(R.id.folion);
             fechan = itemView.findViewById(R.id.fechan);
             mensajen = itemView.findViewById(R.id.mensaj);
+            estatus = itemView.findViewById(R.id.colorestatusnotificaciones);
 
 
         }
@@ -77,6 +78,16 @@ public class CardAdapter_busqueda_boletos extends RecyclerView.Adapter<CardAdapt
             folion.setText(planet.getFolion());
             fechan.setText(planet.getFechan());
             mensajen.setText(planet.getMensajen());
+
+            String r = planet.getImg();
+            if(r=="0"){
+                int red = Color.parseColor(r);
+                estatus.setCardBackgroundColor(red);
+            }else{
+                int red = Color.parseColor(r);
+                estatus.setCardBackgroundColor(red);
+            }
+
             }
 
         void bind(final Planet employee) {
