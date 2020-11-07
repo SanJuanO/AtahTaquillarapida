@@ -35,8 +35,8 @@ interface CorridasDiaModelDao {
     @Query("SELECT PK_DESTINO,DESTINO,PRECIO FROM CorridasDiaModel WHERE PK_ORIGEN=:pk_origen and PK_LINEA =:pk_linea  GROUP BY PK_DESTINO,DESTINO,PRECIO")
     fun getDestinos(pk_origen:Int,pk_linea:Int):List<DestinosModel>
 
-    @Query("SELECT SALIDA,PRECIO FROM CorridasDiaModel WHERE PK_LINEA =:pk_linea and PK_ORIGEN=:pk_origen and PK_DESTINO=:pk_destino  GROUP BY SALIDA,PRECIO")
-    fun getHorarios(pk_linea:Int,pk_origen:Int,pk_destino:Int):List<HorariosModel>
+    @Query("SELECT SALIDA,PRECIO FROM CorridasDiaModel WHERE PK_LINEA =:pk_linea and PK_ORIGEN=:pk_origen and PK_DESTINO=:pk_destino and GUIA=:guia  GROUP BY SALIDA,PRECIO")
+    fun getHorarios(pk_linea:Int,pk_origen:Int,pk_destino:Int,guia:String):List<HorariosModel>
 
 
     @Query("SELECT * FROM CorridasDiaModel WHERE GUIA=:guia AND PK_LINEA=:pk_linea AND PK_ORIGEN=:pk_origen AND PK_DESTINO=:pk_destino and SALIDA=:salida")

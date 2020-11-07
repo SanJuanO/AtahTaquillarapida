@@ -1392,7 +1392,7 @@ val tdestino= DESTINO2 + "\n"
         val pkd=pkdestino.get(posiciondestino.toInt()).toInt()
 
         try {
-            var horariosM= db?.CorridasDiaModelDao()?.getHorarios(pkl,pko,pkd)
+            var horariosM= db?.CorridasDiaModelDao()?.getHorarios(pkl,pko,pkd,"False")
             if (horariosM != null) {
 
                 horarios.clear()
