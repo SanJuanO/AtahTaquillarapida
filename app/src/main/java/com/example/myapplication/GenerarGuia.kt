@@ -132,11 +132,14 @@ infrome()
 
                 if(turno.equals("")){
                     TT=0.0
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                  //  TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
+
                     ecoautobus.setText("#"+"%.2f".format(TOTAL))
                 }else {
                     TT=turno.toDouble()
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                   // TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
                     ecoautobus.setText("#"+"%.2f".format(TOTAL))
                 }
 
@@ -156,12 +159,15 @@ infrome()
                 val paso=tp.text.toString()
                 if(paso.equals("")){
                     TP=0.0
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                   // TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
+
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }else {
                     TP=paso.toDouble()
+                   // TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
 
-                    TOTAL =  IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL =  IMPORTE -GASTOS-TT-TP-TS
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }
 
@@ -181,12 +187,16 @@ infrome()
                 val salida=ts.text.toString()
                 if(salida.equals("")){
                     TS=0.0
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+               //     TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
+
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }else {
                     TS=salida.toDouble()
 
-                    TOTAL =  IMPORTE - IVA-GASTOS-TT-TP-TS
+                 //   TOTAL =  IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
+
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }
 
@@ -206,13 +216,16 @@ infrome()
                 val gasto=gastos.text.toString()
                 if(gasto.equals("")){
                     GASTOS=0.0
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+               //     TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }else {
 
                     GASTOS=gasto.toDouble()
+                //    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
 
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }
 
@@ -232,13 +245,15 @@ infrome()
                 val gasto=gastos.text.toString()
                 if(gasto.equals("")){
                     GASTOS=0.0
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                   // TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }else {
 
                     GASTOS=gasto.toDouble()
-
-                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+//                    TOTAL = IMPORTE - IVA-GASTOS-TT-TP-TS
+                    TOTAL = IMPORTE -GASTOS-TT-TP-TS
                     ecoautobus.setText("$"+"%.2f".format(TOTAL))
                 }
 
@@ -305,7 +320,8 @@ infrome()
                         BOLETOS = cant
 
                         IVA = IMPORTE * por
-                        TOTAL = IMPORTE - IVA
+                       // TOTAL = IMPORTE - IVA
+                        TOTAL = IMPORTE
                         val producto2 = response.getJSONObject("corrida")
 
 

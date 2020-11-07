@@ -4,6 +4,7 @@ import BuscarModel
 import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -67,6 +68,12 @@ class BoletosVendidos : Fragment() {
 
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+
+        Toast.makeText(requireActivity(), "Actualizado", Toast.LENGTH_SHORT)
+            .show()
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -133,7 +140,7 @@ var color="";
                             }
 
                             var planet = Planet("  Folio:"+
-                                producto.getString("folio")+"                     "+"ESTATUS:"+producto.getString("status"),
+                                producto.getString("folio")+"                 "+"ESTATUS:"+producto.getString("status"),
                                 "  Total:"+"$"+producto.getString("precio")+ System.getProperty ("line.separator")+"  Tarifa:"+   producto.getString("tarifa"),
                                 "  Asiento:"+producto.getString("asiento"),
                                 " "+producto.getString("sucursal")+"-"+producto.getString("destinoboleto"),

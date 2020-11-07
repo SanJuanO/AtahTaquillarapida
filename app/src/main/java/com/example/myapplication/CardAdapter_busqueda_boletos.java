@@ -79,7 +79,7 @@ public class CardAdapter_busqueda_boletos extends RecyclerView.Adapter<CardAdapt
             fechan.setText(planet.getFechan());
             mensajen.setText(planet.getMensajen());
 
-            String r = planet.getImg();
+            String r = planet.getImg()  ;
             if(r=="0"){
                 int red = Color.parseColor(r);
                 estatus.setCardBackgroundColor(red);
@@ -94,13 +94,19 @@ public class CardAdapter_busqueda_boletos extends RecyclerView.Adapter<CardAdapt
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+if(employee.getImg()!="#ED3734") {
+    String d = employee.getColorn();
+    Intent intent = new Intent(context, Reimprimir.class);
+    intent.putExtra("pk", d);
 
-                        String d = employee.getColorn();
-                        Intent intent = new Intent(context, Reimprimir.class);
-                        intent.putExtra("pk", d);
+    context.startActivity(intent);
+}else{
+    Toast toast1 =
+            Toast.makeText(context.getApplicationContext(),
+                    "Boleto cancelado", Toast.LENGTH_SHORT);
 
-                        context.startActivity(intent);
-
+    toast1.show();
+}
                 }
             });
 
