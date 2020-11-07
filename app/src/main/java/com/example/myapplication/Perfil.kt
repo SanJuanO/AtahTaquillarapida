@@ -154,8 +154,10 @@ var nombre="";
             // Set a positive button and its click listener on alert dialog
             builder.setPositiveButton("Aceptar") { dialog, which ->
                 // Do something when user press the positive button
+
                 if (Utilidades.bluetoothSocket != null) {
-                    reimprimir()
+                    generar()
+
                 }else{
                     Toast.makeText(requireActivity(), "Conecte una impresora", Toast.LENGTH_SHORT)
 
@@ -166,65 +168,84 @@ var nombre="";
             builder.setNegativeButton("Cancelar"){dialog,which ->
             }
             builder.show()        })
-
-         bcemitidos = 0;
-         bccancelados = 0;
-         biemitios = 0.0;
-         bicancelados = 0.0;
-         brexpedidos = 0;
-         biexpedidos = 0.0;
-         bcventa = 0;
-         biventa = 0.0;
-         ggemitidas = 0;
-         ggcanceladas = 0;
-         ggimporte = 0.0;
-         ggcompbanco = 0.0;
-         ggaportacion = 0.0;
-         ggdisel = 0.0;
-         ggcaseta = 0.0;
-         ggcomision = 0.0;
-
-         ggtturno = 0.0;
-         ggtpaso = 0.0;
-         ggtsalida = 0.0;
-         ggiva = 0.0;
-         gggastos = 0.0;
-         ggtotal = 0.0;
-
-
-
-         ccaseta=0.0;
-         cdiesel=0.0;
-         cventa = 0.0;
-         cancelado = 0.0;
-         canticipo = 0.0;
-         ctarjetas = 0.0;
-         ccomision = 0.0;
-         caportacion = 0.0;
-         ctarjetadebito = 0.0;
-         ctarjetacredio = 0.0;
-         cefectivo = 0.0;
-         ctotalentregar = 0.0;
-         cvales = 0.0;
-          bestado.clear()
-        btotal.clear()
-          pkboletos.clear()
-          gimporte.clear()
-          gcombanco.clear()
-          gaportacion.clear()
-          gturno.clear()
-          gpaso.clear()
-          gsalida.clear()
-          giva.clear()
-          ggastos.clear()
-          gtotal.clear()
-          gdisel.clear()
-          gcaseta.clear()
-          pkguias.clear()
-
+        limpiar()
 infrome()
     }
+fun listo(){
+    val builder = AlertDialog.Builder(requireActivity())
 
+    // Set the alert dialog title
+    builder.setTitle("Corte generado exitosamente!")
+
+    // Display a message on alert dialog
+    // Set a positive button and its click listener on alert dialog
+    builder.setPositiveButton("Aceptar") { dialog, which ->
+        // Do something when user press the positive button
+        limpiar()
+        infrome()
+    }
+
+    builder.show()
+
+}
+    fun limpiar(){
+
+        bcemitidos = 0;
+        bccancelados = 0;
+        biemitios = 0.0;
+        bicancelados = 0.0;
+        brexpedidos = 0;
+        biexpedidos = 0.0;
+        bcventa = 0;
+        biventa = 0.0;
+        ggemitidas = 0;
+        ggcanceladas = 0;
+        ggimporte = 0.0;
+        ggcompbanco = 0.0;
+        ggaportacion = 0.0;
+        ggdisel = 0.0;
+        ggcaseta = 0.0;
+        ggcomision = 0.0;
+
+        ggtturno = 0.0;
+        ggtpaso = 0.0;
+        ggtsalida = 0.0;
+        ggiva = 0.0;
+        gggastos = 0.0;
+        ggtotal = 0.0;
+
+
+
+        ccaseta=0.0;
+        cdiesel=0.0;
+        cventa = 0.0;
+        cancelado = 0.0;
+        canticipo = 0.0;
+        ctarjetas = 0.0;
+        ccomision = 0.0;
+        caportacion = 0.0;
+        ctarjetadebito = 0.0;
+        ctarjetacredio = 0.0;
+        cefectivo = 0.0;
+        ctotalentregar = 0.0;
+        cvales = 0.0;
+        bestado.clear()
+        btotal.clear()
+        pkboletos.clear()
+        gimporte.clear()
+        gcombanco.clear()
+        gaportacion.clear()
+        gturno.clear()
+        gpaso.clear()
+        gsalida.clear()
+        giva.clear()
+        ggastos.clear()
+        gtotal.clear()
+        gdisel.clear()
+        gcaseta.clear()
+        pkguias.clear()
+
+    }
     fun cerrarsesio() {
         val preferencias =
             this.requireActivity().getSharedPreferences("variables", Context.MODE_PRIVATE)
@@ -275,20 +296,20 @@ var cantidadvendidos= vendidos.length()
 
                             if( vend.getString("status")=="CANCELADO") {
 
-                                bicancelados = bicancelados+ vend.getDouble("precio");
+                                bicancelados = String.format("%.1f", bicancelados+ vend.getDouble("precio")).toDouble();
                                 canceladosuma=canceladosuma+1;
                                 bccancelados = canceladosuma;
 
                             }
                             if( vend.getString("status")=="VENDIDO") {
 
-                                biventa = biventa+ vend.getDouble("precio");
+                                biventa = String.format("%.1f", biventa+ vend.getDouble("precio")).toDouble();
 
                                 vendidosuma=vendidosuma+1;
                                 bcventa = vendidosuma;
 
                             }
-                            biemitios = biemitios+ vend.getDouble("precio");
+                            biemitios =String.format("%.1f",  biemitios+ vend.getDouble("precio")).toDouble();
 
                         }
 
@@ -505,12 +526,19 @@ ctarjetas=String.format("%.1f", ctarjetas+guia.getDouble("tturno")+guia.getDoubl
             e.printStackTrace()
         }
         val requstQueue = Volley.newRequestQueue(requireActivity())
-        val jsonObjectRequest: JsonObjectRequest = object : JsonObjectRequest(Method.POST, "https://appis.atah.online/api/Guias2/Generaguia", datos,
+        val jsonObjectRequest: JsonObjectRequest = object : JsonObjectRequest(Method.POST, "https://appis.atah.online/api/CorteCaja/GeneraCorteCaja", datos,
             Response.Listener { response ->
                 try {
                     progressDialog?.dismiss()
                     val result = response["result"] as Int
                     if (result == 1) {
+                        val cortecaja = response.getJSONObject("corteCaja")
+
+                            desde = (cortecaja.getString("apartir"))
+                            hasta = (cortecaja.getString("hasta"))
+                            folio = (cortecaja.getString("folio"))
+
+                        reimprimir()
 
                     } else {
                         val error = response.getString("mensaje")
@@ -637,48 +665,11 @@ ctarjetas=String.format("%.1f", ctarjetas+guia.getDouble("tturno")+guia.getDoubl
 
         outputStream.write("\n".toByteArray())
 
+        listo()
 
 
-        try {
-            val productId: String = folio
-            val hintMap: Hashtable<EncodeHintType, ErrorCorrectionLevel> =
-                Hashtable<EncodeHintType, ErrorCorrectionLevel>()
-            hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
-            val codeWriter: Writer
-            codeWriter = Code128Writer()
-            val byteMatrix: BitMatrix = codeWriter.encode(
-                productId,
-                BarcodeFormat.CODE_128,
-                400,
-                100,
-                hintMap
-            )
-            val width: Int = byteMatrix.getWidth()
-            val height: Int = byteMatrix.getHeight()
-            val bitmap =
-                Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-            for (i in 0 until width) {
-                for (j in 0 until height) {
-                    bitmap.setPixel(
-                        i,
-                        j,
-                        if (byteMatrix.get(i, j)) Color.BLACK else Color.WHITE
-                    )
-                }
-            }
-            val bitmapqr = bitmap
 
-            Utilidades.outputStream!!.write(
-                PrintBitmap.POS_PrintBMP(
-                    bitmapqr,
-                    380,
-                    MODE_PRINT_IMG
-                )
-            )
 
-        } catch (e: Exception) {
-            val a = e
-        }
 
     }
 
