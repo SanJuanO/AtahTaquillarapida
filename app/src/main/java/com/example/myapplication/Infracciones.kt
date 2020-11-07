@@ -247,6 +247,8 @@ class Infracciones : Fragment() {
             if(!PKCORRIDA.isNullOrEmpty()){
                 val intent = Intent(requireActivity(), CorridasActivity::class.java)
                 intent.putExtra("PK_CORRIDA", PKCORRIDA);
+                intent.putExtra("SALIDA", SALIDA);
+                intent.putExtra("AUTOBUS", AUTOBUS);
 
                 //startActivity(intent)
                 startActivityForResult(

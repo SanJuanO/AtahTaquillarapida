@@ -2,13 +2,11 @@ package com.example.myapplication.activities
 
 import android.app.ProgressDialog
 import android.content.Context
-import android.content.SharedPreferences
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
@@ -18,26 +16,17 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.myapplication.CardAdapter_busqueda_boletos
 import com.example.myapplication.CorridasDiaModel
-import com.example.myapplication.Infracciones
 import com.example.myapplication.R
 import com.example.myapplication.adapters.CorridasAdapter
+import com.example.myapplication.components.OnCompleteListener
+import com.example.myapplication.components.TimePickerFragment
 import com.example.myapplication.db.AppDatabase
-import com.example.myapplication.models.TipoPasajeModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_corridas.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_reimprimir.*
 import org.json.JSONException
 import org.json.JSONObject
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
-import kotlin.collections.ArrayList
 
-class CorridasActivity : AppCompatActivity() {
+class CorridasActivity : AppCompatActivity(), OnCompleteListener {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
@@ -52,6 +41,8 @@ class CorridasActivity : AppCompatActivity() {
     var URL_CORRIDAS:String="api/Corridas/getCorridasDiaCambioAutobus"
     var URL_ACTUALIZA_AUTOBUS:String="api/Corridas/CambioAutobusApp"
     var usuario=""
+    var SALIDA=""
+    var AUTOBUS=""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +54,11 @@ class CorridasActivity : AppCompatActivity() {
         URL_ACTUALIZA_AUTOBUS=HOST+URL_ACTUALIZA_AUTOBUS
 
         pk_corrida = intent.getStringExtra("PK_CORRIDA")
+        SALIDA = intent.getStringExtra("SALIDA")
+        AUTOBUS = intent.getStringExtra("AUTOBUS")
+        btnSeleccionaHorario.text=SALIDA
+        etEcoCambiaAutobus.setText(AUTOBUS)
+
 
         db= Room.databaseBuilder(
             applicationContext,
@@ -71,7 +67,7 @@ class CorridasActivity : AppCompatActivity() {
         Corridas=ArrayList<CorridasDiaModel>()
 
         val preferencias = getSharedPreferences("VARIABLES", Context.MODE_PRIVATE)
-        usuario=preferencias.getString("usuario","").toString()
+        usuario=preferencias.getString("usuario", "").toString()
         /*pk_origen= preferencias.getString("sucursal","0")!!
 
         Corridas=db?.CorridasDiaModelDao()?.loadCorridasByFiltro(pk_origen.toInt(),pk_linea.toInt())
@@ -112,14 +108,16 @@ class CorridasActivity : AppCompatActivity() {
 
         val datos = JSONObject()
         try {
-            datos.put("PK",pk_corrida)
+            datos.put("PK", pk_corrida)
         } catch (e: Exception) {
             e.printStackTrace()
         }
 
         val requstQueue = Volley.newRequestQueue(this)
-        val progressDialog = ProgressDialog(this,
-            R.style.Theme_AppCompat_Light_Dialog)
+        val progressDialog = ProgressDialog(
+            this,
+            R.style.Theme_AppCompat_Light_Dialog
+        )
         progressDialog.isIndeterminate = true
         progressDialog.setMessage("Descargando corridas...")
         progressDialog.show()
@@ -139,60 +137,61 @@ class CorridasActivity : AppCompatActivity() {
 
                             for (i in 0 until corridas.length()) {
                                 val corrida = corridas.getJSONObject(i)
-                                var corridaM=CorridasDiaModel();
-                                corridaM.PK=corrida.getInt("pk")
-                                corridaM.PK_LINEA=corrida.getInt("pK_LINEA")
-                                corridaM.LINEA=corrida.getString("linea")
-                                corridaM.PK_ROL=corrida.getInt("pK_ROL")
-                                corridaM.ROL=corrida.getString("rol")
-                                corridaM.PK_CORRIDA=corrida.getInt("pK_CORRIDA")
-                                corridaM.NO_CORRIDA=corrida.getInt("nO_CORRIDA")
-                                corridaM.CORRIDA_DESCRIPCION=corrida.getString("corridA_DESCRIPCION")
-                                corridaM.PK_AUTOBUS=corrida.getInt("pK_AUTOBUS")
-                                corridaM.AUTOBUS=corrida.getString("autobus")
-                                corridaM.TIPO_PK=corrida.getInt("tipO_PK")
-                                corridaM.PK_ORIGEN=corrida.getInt("pK_ORIGEN")
-                                corridaM.ORIGEN=corrida.getString("origen")
-                                corridaM.SALIDA=corrida.getString("salida")
-                                corridaM.PK_DESTINO=corrida.getInt("pK_DESTINO")
-                                corridaM.DESTINO=corrida.getString("destino")
-                                corridaM.LLEGADA=corrida.getString("llegada")
-                                corridaM.ESCALA=corrida.getString("escala")
-                                corridaM.FECHA=corrida.getString("fecha")
-                                corridaM.PK_RUTA=corrida.getInt("pK_RUTA")
-                                corridaM.RUTA=corrida.getString("ruta")
-                                corridaM.PK_CORRIDA_RUTA=corrida.getInt("pK_CORRIDA_RUTA")
-                                corridaM.BLOQUEADO=corrida.getString("bloqueado")
-                                corridaM.GUIA=corrida.getString("guia")
-                                corridaM.COMPLETO=corrida.getString("completo")
-                                corridaM.PK_ORIGEN_COMPLETO=corrida.getInt("pK_ORIGEN_COMPLETO")
-                                corridaM.ORIGEN_COMPLETO=corrida.getString("origeN_COMPLETO")
-                                corridaM.SALIDA_COMPLETO=corrida.getString("salidA_COMPLETO")
-                                corridaM.SALIDA_C=corrida.getString("salidA_C")
-                                corridaM.PK_DESTINO_COMPLETO=corrida.getInt("pK_DESTINO_COMPLETO")
-                                corridaM.DESTINO_COMPLETO=corrida.getString("destinO_COMPLETO")
-                                corridaM.LLEGADA_COMPLETO=corrida.getString("llegadA_COMPLETO")
-                                corridaM.LLEGADA_C=corrida.getString("llegadA_C")
-                                corridaM.FECHA_C=corrida.getString("fechA_C")
-                                corridaM.FECHA_M=corrida.getString("fechA_M")
-                                corridaM.USUARIO=corrida.getString("usuario")
+                                var corridaM = CorridasDiaModel();
+                                corridaM.PK = corrida.getInt("pk")
+                                corridaM.PK_LINEA = corrida.getInt("pK_LINEA")
+                                corridaM.LINEA = corrida.getString("linea")
+                                corridaM.PK_ROL = corrida.getInt("pK_ROL")
+                                corridaM.ROL = corrida.getString("rol")
+                                corridaM.PK_CORRIDA = corrida.getInt("pK_CORRIDA")
+                                corridaM.NO_CORRIDA = corrida.getInt("nO_CORRIDA")
+                                corridaM.CORRIDA_DESCRIPCION =
+                                    corrida.getString("corridA_DESCRIPCION")
+                                corridaM.PK_AUTOBUS = corrida.getInt("pK_AUTOBUS")
+                                corridaM.AUTOBUS = corrida.getString("autobus")
+                                corridaM.TIPO_PK = corrida.getInt("tipO_PK")
+                                corridaM.PK_ORIGEN = corrida.getInt("pK_ORIGEN")
+                                corridaM.ORIGEN = corrida.getString("origen")
+                                corridaM.SALIDA = corrida.getString("salida")
+                                corridaM.PK_DESTINO = corrida.getInt("pK_DESTINO")
+                                corridaM.DESTINO = corrida.getString("destino")
+                                corridaM.LLEGADA = corrida.getString("llegada")
+                                corridaM.ESCALA = corrida.getString("escala")
+                                corridaM.FECHA = corrida.getString("fecha")
+                                corridaM.PK_RUTA = corrida.getInt("pK_RUTA")
+                                corridaM.RUTA = corrida.getString("ruta")
+                                corridaM.PK_CORRIDA_RUTA = corrida.getInt("pK_CORRIDA_RUTA")
+                                corridaM.BLOQUEADO = corrida.getString("bloqueado")
+                                corridaM.GUIA = corrida.getString("guia")
+                                corridaM.COMPLETO = corrida.getString("completo")
+                                corridaM.PK_ORIGEN_COMPLETO = corrida.getInt("pK_ORIGEN_COMPLETO")
+                                corridaM.ORIGEN_COMPLETO = corrida.getString("origeN_COMPLETO")
+                                corridaM.SALIDA_COMPLETO = corrida.getString("salidA_COMPLETO")
+                                corridaM.SALIDA_C = corrida.getString("salidA_C")
+                                corridaM.PK_DESTINO_COMPLETO = corrida.getInt("pK_DESTINO_COMPLETO")
+                                corridaM.DESTINO_COMPLETO = corrida.getString("destinO_COMPLETO")
+                                corridaM.LLEGADA_COMPLETO = corrida.getString("llegadA_COMPLETO")
+                                corridaM.LLEGADA_C = corrida.getString("llegadA_C")
+                                corridaM.FECHA_C = corrida.getString("fechA_C")
+                                corridaM.FECHA_M = corrida.getString("fechA_M")
+                                corridaM.USUARIO = corrida.getString("usuario")
                                 //corridaM.PK_CHOFER=corrida.getInt("pK_CHOFER")
-                               // corridaM.NOMBRE=corrida.getString("nombre")
+                                // corridaM.NOMBRE=corrida.getString("nombre")
                                 //corridaM.APELLIDOS=corrida.getString("apellidos")
                                 //corridaM.PISOS=corrida.getString("pisos")
-                                corridaM.TIEMPO=corrida.getString("tiempo")
+                                corridaM.TIEMPO = corrida.getString("tiempo")
                                 //corridaM.PRECIO=corrida.getDouble("precio")
                                 Corridas?.add(corridaM)
 
                             }
-                            viewAdapter = CorridasAdapter(this,Corridas!!)
+                            viewAdapter = CorridasAdapter(this, Corridas!!)
                             my_recycler_view_corridas.adapter = viewAdapter
                             my_recycler_view_corridas.adapter?.notifyDataSetChanged()
 
                         } catch (es: Exception) {
                             Log.d("sergio1", "" + es.toString())
                             //finish()
-                            Toast.makeText(this,es.message, Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, es.message, Toast.LENGTH_LONG).show()
                             progressDialog?.dismiss()
                         }
 
@@ -231,23 +230,26 @@ class CorridasActivity : AppCompatActivity() {
 
     fun ActualizaAutobus() {
 
-        var eco=editTextTextPersonName.text.toString()
+        var eco=etEcoCambiaAutobus.text.toString().trim()
         if(eco.isNullOrEmpty()){
-            Toast.makeText(this,"Ingrese eco del nuevo autobus",Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Ingrese eco del nuevo autobus", Toast.LENGTH_LONG).show()
             return
         }
         val datos = JSONObject()
         try {
-            datos.put("PK",pk_corrida)
-            datos.put("AUTOBUS",eco)
-            datos.put("USUARIO",usuario)
+            datos.put("PK", pk_corrida)
+            datos.put("AUTOBUS", eco)
+            datos.put("SALIDA", SALIDA)
+            datos.put("USUARIO", usuario)
         } catch (e: Exception) {
             e.printStackTrace()
         }
 
         val requstQueue = Volley.newRequestQueue(this)
-        val progressDialog = ProgressDialog(this,
-            R.style.Theme_AppCompat_Light_Dialog)
+        val progressDialog = ProgressDialog(
+            this,
+            R.style.Theme_AppCompat_Light_Dialog
+        )
         progressDialog.isIndeterminate = true
         progressDialog.setMessage("Descargando corridas...")
         progressDialog.show()
@@ -260,19 +262,19 @@ class CorridasActivity : AppCompatActivity() {
                     progressDialog?.dismiss()
                     if (result == 1) {
                         try {
-                            var msg=response.get("mensaje")
-                            Toast.makeText(this,""+msg, Toast.LENGTH_LONG).show()
+                            var msg = response.get("mensaje")
+                            Toast.makeText(this, "" + msg, Toast.LENGTH_LONG).show()
                             setResult(RESULT_OK)
                             finish()
                         } catch (es: Exception) {
                             Log.d("sergio1", "" + es.toString())
                             //finish()
-                            Toast.makeText(this,es.message, Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, es.message, Toast.LENGTH_LONG).show()
                             progressDialog?.dismiss()
                         }
 
                     } else {
-                        var msg=response.getString("mensaje")
+                        var msg = response.getString("mensaje")
                         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
                     }
 
@@ -284,7 +286,8 @@ class CorridasActivity : AppCompatActivity() {
             object : Response.ErrorListener {
                 override fun onErrorResponse(error: VolleyError) {
                     progressDialog?.dismiss()
-                    Toast.makeText(this@CorridasActivity,error.toString(),Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@CorridasActivity, error.toString(), Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         ) {
@@ -306,7 +309,12 @@ class CorridasActivity : AppCompatActivity() {
     }
 
 
-    fun obtenerCorridas(origen:String = "", fecha:String = "", pkRol:String = "", pkLinea:String = "")
+    fun obtenerCorridas(
+        origen: String = "",
+        fecha: String = "",
+        pkRol: String = "",
+        pkLinea: String = ""
+    )
     {
 
         var sql = "SELECT ROW_NUMBER()over( order by SALIDA asc) as 'no',PK_LINEA,LINEA,PK_ROL,ROL,PK_CORRIDA,NO_CORRIDA,CORRIDA_DESCRIPCION,PK_AUTOBUS,AUTOBUS," +
@@ -343,5 +351,27 @@ class CorridasActivity : AppCompatActivity() {
                 " PK_CORRIDA_RUTA,BLOQUEADO,GUIA ORDER BY SALIDA ";
 
     }
+
+    fun showTimePickerDialog(v: View) {
+        TimePickerFragment(SALIDA.split(":")[0].toInt(),SALIDA.split(":")[1].toInt()).show(supportFragmentManager, "timePicker")
+        //Toast.makeText(this,"2: "+tiempo,Toast.LENGTH_LONG).show()
+
+        /*val onTimeSetListener =
+            OnTimeSetListener { view, hourOfDay, minute ->
+                val hora = hourOfDay
+                val minuto = minute
+                Toast.makeText(this,""+hora+":"+minute,Toast.LENGTH_LONG).show()
+            }
+        */
+    }
+
+    override fun onComplete(time: String?) {
+        //TODO("Not yet implemented")
+        //Toast.makeText(this,"2: "+time,Toast.LENGTH_LONG).show()
+        btnSeleccionaHorario.text=time
+        SALIDA= time!!
+
+    }
+
 
 }
