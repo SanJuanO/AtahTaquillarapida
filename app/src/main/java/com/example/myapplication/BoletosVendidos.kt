@@ -187,7 +187,6 @@ var color="";
         requstQueue.add(jsonObjectRequest)
     }
 
-
 }
 
 
