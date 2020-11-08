@@ -786,6 +786,8 @@ val pko=pk_origen.toInt()
             COLUMNA="100"
             PISO="1"
             CORTE="0"
+var preciotemp=numberPicker.value.toString()
+            PRECIO  = preciotemp
             FORMADEPAGO="Efectivo"
 var t = TARIFA
             datos.put("LLEGADA_C", LLEGADA_C)
