@@ -10,8 +10,6 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Base64
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,7 +21,6 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import com.android.volley.DefaultRetryPolicy
@@ -387,6 +384,8 @@ SALIDA=horarios.get(i)
                     val porcentaje=descuent/100
                     val tota= tarifa-tarifa*(porcentaje)
                     PRECIO=tota.toString()
+                    numberPicker.value = tota.toInt()
+
 //                    total.setText(tota.toString())
                  //   consultarhorarios()
                    // corrida()
@@ -426,8 +425,11 @@ SALIDA=horarios.get(i)
 
             numberPicker.setOnValueChangedListener { picker, oldVal, newVal ->
 PRECIO=numberPicker.value.toString()
+                numberPicker.value =PRECIO.toInt()
 
         }
+
+
 
         }
 

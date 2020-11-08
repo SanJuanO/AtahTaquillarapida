@@ -232,13 +232,15 @@ android:layout_marginTop="20dp"                    android:weightSum="4"
                     >
 
 
-
                     <NumberPicker
                         android:id="@+id/numberPicker"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
                         style="@style/precio"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+
+                        android:descendantFocusability="blocksDescendants"
+                        android:fitsSystemWindows="false"
+                        android:solidColor="@color/aata" />
 
                     <View
                         android:layout_width="match_parent"
