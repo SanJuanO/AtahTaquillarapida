@@ -228,9 +228,10 @@ class Infracciones : Fragment() {
         checker = PermissionsChecker(activity)
 
         btnguia.setOnClickListener(View.OnClickListener {
-            if (bluetoothSocket != null) {
 
+            if (bluetoothSocket != null) {
                 generarguia()
+
             } else {
                 Toast.makeText(requireActivity(), "Conecte una impresora", Toast.LENGTH_SHORT)
                     .show()
@@ -901,9 +902,15 @@ val tdestino= DESTINO2 + "\n"
                             // val texto66 =
                             //"EFECTIVO" + "                     " + "#" + PRECIO + ".00"
                             val texto666 =
-                                "Presente identificación original y vigenete al momento de abordar.\n"
+                                       "Presente identificación original y vigente al momento de abordar.\n"
                             val texto6666 =
-                                "Atención a clientes: 01 800 836 0726 \nTterminos y condiciónes www.atah.online\n\n\n"
+                                       "Atención a clientes: 01 800 836 0726 \nTterminos y condiciónes www.atah.online\n"
+                            val extra ="------------------------------------------\n\n"
+                            val extra1 ="FECHA:"+FECHA+"  LINEA:"+LINEA+"\n"+
+                            "FOLIO:"+folio+"  AUTOBUS:"+AUTOBUS+"\n"+
+                            "ASIENTO:"+ASIENTO+" SALIDA:"+SALIDA+"\n"+
+                                    "ORIGEN:"+org2+"DESTINO:"+DESTINO2+"\n"+
+                                    "TARIFA:"+TARIFA+"  PRECIO:$"+PRECIO+"\n\n\n"
 
 
                             val fuente1 = 1
@@ -1131,7 +1138,32 @@ val tdestino= DESTINO2 + "\n"
                                     0
                                 )
                             )
-
+//                            outputStream!!.write(
+//                                getByteString(
+//                                    extra,
+//                                    negrita,
+//                                    fuente1,
+//                                    0,
+//                                    0
+//                                )
+//                            )
+//                            outputStream!!.write(
+//                                PrintBitmap.POS_PrintBMP(
+//                                    bitmap,
+//                                    100,
+//                                    MODE_PRINT_IMG
+//                                )
+//                            )
+//
+//                            outputStream!!.write(
+//                                getByteString(
+//                                    extra1,
+//                                    negrita,
+//                                    fuente1,
+//                                    0,
+//                                    0
+//                                )
+//                            )
                             button4.isEnabled=true;
 
                         } catch (e: IOException) {
@@ -1139,7 +1171,7 @@ val tdestino= DESTINO2 + "\n"
 
                             Toast.makeText(
                                 requireActivity(),
-                                "Error al interntar imprimir texto",
+                                "Error al interntar imprimir texto REIMPRIMA BOLTEO",
                                 Toast.LENGTH_SHORT
                             ).show()
                             e.printStackTrace()
@@ -1147,7 +1179,11 @@ val tdestino= DESTINO2 + "\n"
 
                     } else {
                         button4.isEnabled=true;
-
+                        Toast.makeText(
+                            requireActivity(),
+                            "Error al interntar imprimir texto REIMPRIMA BOLTEO",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         val error = response.getString("mensaje")
                         Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
 
