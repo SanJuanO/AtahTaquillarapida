@@ -74,6 +74,11 @@ class BoletosVendidos : Fragment() {
         Toast.makeText(requireActivity(), "Actualizado", Toast.LENGTH_SHORT)
             .show()
     }
+
+    override fun onResume() {
+        super.onResume()
+        guardaDatos()
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
